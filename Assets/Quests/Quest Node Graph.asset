@@ -1,0 +1,212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4194881414984233172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
+  m_Name: Quest
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 24, y: 104}
+  ports:
+    keys:
+    - preQuests
+    - nextQuests
+    values:
+    - _fieldName: preQuests
+      _node: {fileID: -4194881414984233172}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: nextQuests
+        node: {fileID: -2095786061493195144}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextQuests
+      _node: {fileID: -4194881414984233172}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: preQuests
+        node: {fileID: -1149993863299080669}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  questName: 
+  questDescrp: 
+  tasks: []
+  preQuests: 0
+  nextQuests: 0
+--- !u!114 &-2095786061493195144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
+  m_Name: Quest
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -312, y: -168}
+  ports:
+    keys:
+    - preQuests
+    - nextQuests
+    values:
+    - _fieldName: preQuests
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextQuests
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: preQuests
+        node: {fileID: -1149993863299080669}
+        reroutePoints: []
+      - fieldName: preQuests
+        node: {fileID: -4194881414984233172}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  questName: 
+  questDescrp: 
+  tasks:
+  - {fileID: 11400000, guid: 30ab426ecfa9a60438d7c93c149585bf, type: 2}
+  preQuests: 0
+  nextQuests: 0
+--- !u!114 &-1149993863299080669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
+  m_Name: Quest
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 664, y: 120}
+  ports:
+    keys:
+    - preQuests
+    - nextQuests
+    values:
+    - _fieldName: preQuests
+      _node: {fileID: -1149993863299080669}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: nextQuests
+        node: {fileID: -2095786061493195144}
+        reroutePoints: []
+      - fieldName: nextQuests
+        node: {fileID: -4194881414984233172}
+        reroutePoints: []
+      - fieldName: nextQuests
+        node: {fileID: 63137937293833115}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextQuests
+      _node: {fileID: -1149993863299080669}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  questName: 
+  questDescrp: 
+  tasks: []
+  preQuests: 0
+  nextQuests: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c692ec01ac8fe3419c5358a97ada862, type: 3}
+  m_Name: Quest Node Graph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -2095786061493195144}
+  - {fileID: -4194881414984233172}
+  - {fileID: 63137937293833115}
+  - {fileID: -1149993863299080669}
+--- !u!114 &63137937293833115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
+  m_Name: Quest
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -312, y: 296}
+  ports:
+    keys:
+    - preQuests
+    - nextQuests
+    values:
+    - _fieldName: preQuests
+      _node: {fileID: 63137937293833115}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextQuests
+      _node: {fileID: 63137937293833115}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: preQuests
+        node: {fileID: -1149993863299080669}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  questName: 
+  questDescrp: 
+  tasks: []
+  preQuests: 0
+  nextQuests: 0
