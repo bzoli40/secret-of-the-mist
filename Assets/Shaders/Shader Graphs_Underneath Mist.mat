@@ -79,7 +79,7 @@ Material:
     - _DistortionStrengthScaled: 0.1
     - _DstBlend: 0
     - _Emission_Strength: 2
-    - _Fade_Depth: 60
+    - _Fade_Depth: 30
     - _FlipbookBlending: 0
     - _FlipbookMode: 0
     - _Fresnel_Opacity: 0.1
