@@ -10,6 +10,7 @@ public class InputSystemValues : MonoBehaviour
 	public Vector2 look;
 	public bool jump;
 	public bool sprint;
+	public bool attack;
 
 	[Header("Movement Settings")]
 	public bool analogMovement;
@@ -42,6 +43,11 @@ public class InputSystemValues : MonoBehaviour
 	public void OnSprint(InputValue value)
 	{
 		SprintInput(value.isPressed);
+	}
+
+	public void OnAttack(InputValue value)
+	{
+		attack = value.isPressed;
 	}
 #else
 	// old input sys if we do decide to have it (most likely wont)...
