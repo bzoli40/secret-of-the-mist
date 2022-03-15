@@ -64,7 +64,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Ability_1"",
+                    ""name"": ""Ability_Ultimate"",
                     ""type"": ""Button"",
                     ""id"": ""0a1620b4-da90-4d1e-b634-c28d150ca8c8"",
                     ""expectedControlType"": ""Button"",
@@ -239,10 +239,10 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""cebac9de-82af-480f-b77c-558bf6bd9abf"",
                     ""path"": ""<Keyboard>/r"",
-                    ""interactions"": ""Press(behavior=2)"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard + Mouse"",
-                    ""action"": ""Ability_1"",
+                    ""action"": ""Ability_Ultimate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -362,7 +362,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
-        m_Player_Ability_1 = m_Player.FindAction("Ability_1", throwIfNotFound: true);
+        m_Player_Ability_Ultimate = m_Player.FindAction("Ability_Ultimate", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
     }
@@ -428,7 +428,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Sprint;
-    private readonly InputAction m_Player_Ability_1;
+    private readonly InputAction m_Player_Ability_Ultimate;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Interact;
     public struct PlayerActions
@@ -439,7 +439,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
-        public InputAction @Ability_1 => m_Wrapper.m_Player_Ability_1;
+        public InputAction @Ability_Ultimate => m_Wrapper.m_Player_Ability_Ultimate;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -463,9 +463,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Sprint.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
-                @Ability_1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility_1;
-                @Ability_1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility_1;
-                @Ability_1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility_1;
+                @Ability_Ultimate.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility_Ultimate;
+                @Ability_Ultimate.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility_Ultimate;
+                @Ability_Ultimate.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbility_Ultimate;
                 @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
@@ -488,9 +488,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
-                @Ability_1.started += instance.OnAbility_1;
-                @Ability_1.performed += instance.OnAbility_1;
-                @Ability_1.canceled += instance.OnAbility_1;
+                @Ability_Ultimate.started += instance.OnAbility_Ultimate;
+                @Ability_Ultimate.performed += instance.OnAbility_Ultimate;
+                @Ability_Ultimate.canceled += instance.OnAbility_Ultimate;
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
@@ -525,7 +525,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
-        void OnAbility_1(InputAction.CallbackContext context);
+        void OnAbility_Ultimate(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
     }

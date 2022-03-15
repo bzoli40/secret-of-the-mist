@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Ability_1",
+                    "name": "Ability_Ultimate",
                     "type": "Button",
                     "id": "0a1620b4-da90-4d1e-b634-c28d150ca8c8",
                     "expectedControlType": "Button",
@@ -217,10 +217,10 @@
                     "name": "",
                     "id": "cebac9de-82af-480f-b77c-558bf6bd9abf",
                     "path": "<Keyboard>/r",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "",
                     "processors": "",
                     "groups": "Keyboard + Mouse",
-                    "action": "Ability_1",
+                    "action": "Ability_Ultimate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

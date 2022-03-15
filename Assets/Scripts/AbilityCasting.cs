@@ -5,11 +5,13 @@ using UnityEngine.InputSystem;
 
 public class AbilityCasting : MonoBehaviour
 {
-    [SerializeField]
+    /*[SerializeField]
     private bool isHolding = false;
 
     public GameObject testProj;
-    public Transform throwableParent;
+    public Transform throwableParent;*/
+
+    public AbilityUI abilityUI;
 
     private void Start()
     {
@@ -19,9 +21,9 @@ public class AbilityCasting : MonoBehaviour
         //Event meghívások
     }
 
-    public void OnAbility_1(InputValue value)
+    public void OnAbility_Ultimate(InputValue value)
     {
-        Animator anim = GetComponent<Animator>();
+        /*Animator anim = GetComponent<Animator>();
 
         if (!isHolding)
         {
@@ -32,9 +34,13 @@ public class AbilityCasting : MonoBehaviour
             anim.SetTrigger("spellTrigger");
         }
 
-        isHolding = !isHolding;
+        isHolding = !isHolding;*/
+
+        //UI értesítés
+        abilityUI.UseUlt();
     }
 
+    /*
     public void InitThrowObject()
     {
         Instantiate(testProj, throwableParent);
@@ -52,4 +58,5 @@ public class AbilityCasting : MonoBehaviour
             child.GetComponent<ThrowSpell>().LaunchProjectile();
         }
     }
+    */
 }

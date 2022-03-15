@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 
 public class InputSystemValues : MonoBehaviour
 {
+	[Header("Game Settings")]
+	[SerializeField]
+	private bool canMove = true;
+
 	[Header("Character Input Values")]
 	public Vector2 move;
 	public Vector2 look;
@@ -25,7 +29,7 @@ public class InputSystemValues : MonoBehaviour
 #if ENABLE_INPUT_SYSTEM
 	public void OnMove(InputValue value)
 	{
-		MoveInput(value.Get<Vector2>());
+		MoveInput(canMove? value.Get<Vector2>():new Vector2(0f,0f));
 	}
 
 	public void OnLook(InputValue value)
