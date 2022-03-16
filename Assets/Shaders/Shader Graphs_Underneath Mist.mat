@@ -67,7 +67,7 @@ Material:
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
-    - _Cloud_Height: 70
+    - _Cloud_Height: 60
     - _Cloud_Speed: 30
     - _ColorMode: 0
     - _Cull: 2

@@ -5,13 +5,12 @@ using UnityEngine.InputSystem;
 
 public class AbilityCasting : MonoBehaviour
 {
-    /*[SerializeField]
+
+    [SerializeField]
     private bool isHolding = false;
 
-    public GameObject testProj;
-    public Transform throwableParent;*/
-
     public AbilityUI abilityUI;
+    public GameObject cameraFollowObj;
 
     private void Start()
     {
@@ -21,23 +20,29 @@ public class AbilityCasting : MonoBehaviour
         //Event meghívások
     }
 
+    private void FixedUpdate()
+    {
+        if (isHolding)
+        {
+            RaycastHit hit;
+
+            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+            {
+                Debug.Log(hit.point);
+            }
+        }
+    }
+
     public void OnAbility_Ultimate(InputValue value)
     {
-        /*Animator anim = GetComponent<Animator>();
-
-        if (!isHolding)
-        {
-            anim.SetTrigger("startMotion");
-        }
-        else
-        {
-            anim.SetTrigger("spellTrigger");
-        }
-
-        isHolding = !isHolding;*/
 
         //UI értesítés
-        abilityUI.UseUlt();
+
+        if (abilityUI.CanUseUlt())
+        {
+            Camera.main.GetComponent<CameraStateControll>().SwitchFollower();
+            isHolding = !isHolding;
+        }
     }
 
     /*

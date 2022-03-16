@@ -47,4 +47,9 @@ public class AbilityUI : MonoBehaviour
             
         }
     }
+
+    public bool CanUseUlt()
+    {
+        return canUseUltimate;
+    }
 }
