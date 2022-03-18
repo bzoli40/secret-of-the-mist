@@ -35,12 +35,11 @@ public class AbilityCasting : MonoBehaviour
 
     public void OnAbility_Ultimate(InputValue value)
     {
-
         //UI értesítés
 
-        if (abilityUI.CanUseUlt())
+        if (abilityUI.CanUseUlt() && false)
         {
-            Camera.main.GetComponent<CameraStateControll>().SwitchFollower();
+            //Camera.main.GetComponent<CameraStateControll>().SwitchFollower();
             isHolding = !isHolding;
         }
     }

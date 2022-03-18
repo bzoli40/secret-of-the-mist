@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class UI_Rotation : MonoBehaviour
+public class Element_Rotation : MonoBehaviour
 {
     private void Update()
     {

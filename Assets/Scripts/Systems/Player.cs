@@ -10,6 +10,21 @@ public class Player : MonoBehaviour
 
     private List<StatusEffect> current_effects;
 
+    public PlayerState playerState { get; private set; }
+
+    //Basic
+    private void Start()
+    {
+        playerState = PlayerState.DOANYTHING;
+    }
+
+    //UI & chat
+    public void ChangeFocus()
+    {
+        playerState = (playerState == PlayerState.DOANYTHING) ? PlayerState.NOCONTROLL : PlayerState.DOANYTHING;
+        GetComponent<InputSystemValues>().OnApplicationFocus();
+    }
+
     //Képességek
 
 

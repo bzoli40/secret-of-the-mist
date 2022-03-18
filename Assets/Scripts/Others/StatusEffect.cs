@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class StatusEffect : MonoBehaviour
 {
-    public enum SE_Type { SLOW, ROOT, FREEZE, REGEN, BLIND };
-
-    public SE_Type type;
+    public Statues_Effect type;
     public float startTime;
     public float duration;
 
-    public StatusEffect(SE_Type t_, float s_, float d_)
+    public StatusEffect(Statues_Effect t_, float s_, float d_)
     {
         type = t_;
         startTime = s_;

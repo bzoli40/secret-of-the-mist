@@ -97,7 +97,7 @@ public class ThirdPersonController : MonoBehaviour
 	{
 		_hasAnimator = TryGetComponent(out _animator);
 		_controller = GetComponent<CharacterController>();
-		_input = GetComponent<InputSystemValues>();
+		_input = GameObject.FindGameObjectWithTag("GameSystem").GetComponent<InputSystemValues>();
 
 		AssignAnimationIDs();
 

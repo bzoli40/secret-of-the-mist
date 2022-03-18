@@ -14,7 +14,7 @@ public class InteractHandler : MonoBehaviour
 
     private void Awake()
     {
-        _input = GetComponent<InputSystemValues>();
+        _input = GameObject.FindGameObjectWithTag("GameSystem").GetComponent<InputSystemValues>();
     }
 
     private void FixedUpdate()

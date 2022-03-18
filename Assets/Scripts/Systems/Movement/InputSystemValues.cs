@@ -5,10 +5,6 @@ using UnityEngine.InputSystem;
 
 public class InputSystemValues : MonoBehaviour
 {
-	[Header("Game Settings")]
-	[SerializeField]
-	private bool canMove = true;
-
 	[Header("Character Input Values")]
 	public Vector2 move;
 	public Vector2 look;
@@ -22,76 +18,67 @@ public class InputSystemValues : MonoBehaviour
 
 #if !UNITY_IOS || !UNITY_ANDROID
 	[Header("Mouse Cursor Settings")]
-	public bool cursorLocked = true;
 	public bool cursorInputForLook = true;
 #endif
 
-#if ENABLE_INPUT_SYSTEM
-	public void OnMove(InputValue value)
+	private Player p;
+
+    private void Awake()
+    {
+		p = GameObject.FindGameObjectWithTag("GameSystem").GetComponent<Player>();
+    }
+
+    public void OnMove(InputValue value)
 	{
-		MoveInput(canMove? value.Get<Vector2>():new Vector2(0f,0f));
+		move = p.playerState == PlayerState.DOANYTHING ? value.Get<Vector2>():new Vector2(0f,0f);
 	}
 
 	public void OnLook(InputValue value)
 	{
+		if (p.playerState != PlayerState.DOANYTHING) return;
+
 		if (cursorInputForLook)
 		{
-			LookInput(value.Get<Vector2>());
+			look = value.Get<Vector2>();
 		}
 	}
 
 	public void OnJump(InputValue value)
 	{
-		JumpInput(value.isPressed);
+		if (p.playerState != PlayerState.DOANYTHING) return;
+
+		jump = value.isPressed;
 	}
 
 	public void OnSprint(InputValue value)
 	{
-		SprintInput(value.isPressed);
+		if (p.playerState != PlayerState.DOANYTHING) return;
+
+		sprint = value.isPressed;
 	}
 
 	public void OnAttack(InputValue value)
 	{
+		if (p.playerState != PlayerState.DOANYTHING) return;
+
 		attack = value.isPressed;
 	}
 
 	public void OnInteract(InputValue value)
 	{
+		if (p.playerState != PlayerState.DOANYTHING) return;
+
 		interact = value.isPressed;
-	}
-#else
-	// old input sys if we do decide to have it (most likely wont)...
-#endif
-
-
-	public void MoveInput(Vector2 newMoveDirection)
-	{
-		move = newMoveDirection;
-	}
-
-	public void LookInput(Vector2 newLookDirection)
-	{
-		look = newLookDirection;
-	}
-
-	public void JumpInput(bool newJumpState)
-	{
-		jump = newJumpState;
-	}
-
-	public void SprintInput(bool newSprintState)
-	{
-		sprint = newSprintState;
 	}
 
 #if !UNITY_IOS || !UNITY_ANDROID
 
-	private void OnApplicationFocus(bool hasFocus)
+	public void OnApplicationFocus()
 	{
-		SetCursorState(cursorLocked);
+		SetCursorState(p.playerState == PlayerState.DOANYTHING);
 	}
 
-	private void SetCursorState(bool newState)
+	public void SetCursorState(bool newState)
 	{
 		Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 	}
