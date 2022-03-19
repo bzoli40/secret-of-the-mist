@@ -89,6 +89,33 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DevConsole"",
+                    ""type"": ""Button"",
+                    ""id"": ""7195ccdb-22e6-4f00-b849-ffd6f7bbb8c2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Enter"",
+                    ""type"": ""Button"",
+                    ""id"": ""05b8ce15-7571-407e-b39b-3930edeec2b0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""83df6626-9656-4786-9051-f8aa8c7f5d35"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -322,6 +349,50 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""40d5b092-1c93-4c33-aeb2-448f3c4d7628"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + Mouse"",
+                    ""action"": ""DevConsole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""905f2fe2-866d-4063-9d29-61bb04021460"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69ee1295-9015-475f-891e-bc69d0b5ef42"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + Mouse"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3914d850-5a11-47ee-98d6-fea57d1d1c0a"",
+                    ""path"": ""<XInputController>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -365,6 +436,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         m_Player_Ability_Ultimate = m_Player.FindAction("Ability_Ultimate", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_DevConsole = m_Player.FindAction("DevConsole", throwIfNotFound: true);
+        m_Player_Enter = m_Player.FindAction("Enter", throwIfNotFound: true);
+        m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -431,6 +505,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Ability_Ultimate;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_DevConsole;
+    private readonly InputAction m_Player_Enter;
+    private readonly InputAction m_Player_Inventory;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -442,6 +519,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         public InputAction @Ability_Ultimate => m_Wrapper.m_Player_Ability_Ultimate;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @DevConsole => m_Wrapper.m_Player_DevConsole;
+        public InputAction @Enter => m_Wrapper.m_Player_Enter;
+        public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -472,6 +552,15 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @DevConsole.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDevConsole;
+                @DevConsole.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDevConsole;
+                @DevConsole.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDevConsole;
+                @Enter.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnter;
+                @Enter.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnter;
+                @Enter.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEnter;
+                @Inventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -497,6 +586,15 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @DevConsole.started += instance.OnDevConsole;
+                @DevConsole.performed += instance.OnDevConsole;
+                @DevConsole.canceled += instance.OnDevConsole;
+                @Enter.started += instance.OnEnter;
+                @Enter.performed += instance.OnEnter;
+                @Enter.canceled += instance.OnEnter;
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
             }
         }
     }
@@ -528,5 +626,8 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         void OnAbility_Ultimate(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnDevConsole(InputAction.CallbackContext context);
+        void OnEnter(InputAction.CallbackContext context);
+        void OnInventory(InputAction.CallbackContext context);
     }
 }
