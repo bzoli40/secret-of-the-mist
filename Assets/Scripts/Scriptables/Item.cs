@@ -31,4 +31,9 @@ public class Item : ScriptableObject
     {
         return codingName;
     }
+
+    public Sprite GetIcon()
+    {
+        return icon;
+    }
 }

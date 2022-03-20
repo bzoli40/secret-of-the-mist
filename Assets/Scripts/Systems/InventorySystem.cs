@@ -46,4 +46,11 @@ public class InventorySystem : MonoBehaviour
             AddItem(foundItem, quantity);
         }
     }
+
+    /// <summary>Tárgyak listájának lekérése
+    /// </summary>
+    public Dictionary<Item, int> GetItemList()
+    {
+        return inventory;
+    }
 }
