@@ -7,7 +7,10 @@ public class QuestNode : Node
 {
     public string questName;
     public string questDescrp;
-    public QuestTask[] tasks;
+    public QuestStartOption startOption;
+
+    [Input(dynamicPortList = true)]
+    public List<TaskNode> tasks;
 
     [Input] public int preQuests;
     [Output] public int nextQuests;

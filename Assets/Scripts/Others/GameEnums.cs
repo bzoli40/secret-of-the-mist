@@ -10,3 +10,9 @@ public enum Rarity { TOO_MANY, NOT_MANY, FEW, ONLY };
 
 //Game enums
 public enum GameState { PAUSED, PLAY };
+
+//Quest enums
+public enum QuestStartOption { AUTOMATIC, NPC_TALK };
+
+//Task enums
+public enum TaskType { KILL, COLLECT, GO_TO, TALK_TO, ETC };
