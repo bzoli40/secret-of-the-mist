@@ -16,3 +16,6 @@ public enum QuestStartOption { AUTOMATIC, NPC_TALK };
 
 //Task enums
 public enum TaskType { KILL, COLLECT, GO_TO, TALK_TO, ETC };
+
+//Event enums
+public enum EventType { };

@@ -1,0 +1,335 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9130841039094188798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b81326cb0ba1de46a285039546a3536, type: 3}
+  m_Name: Task
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -584, y: 600}
+  ports:
+    keys:
+    - questTask
+    values:
+    - _fieldName: questTask
+      _node: {fileID: -9130841039094188798}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: Tasks 0
+        node: {fileID: -2095786061493195144}
+        reroutePoints: []
+      - fieldName: tasks 1
+        node: {fileID: -2095786061493195144}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  taskType: 0
+  quantity: 10
+  item: {fileID: 11400000, guid: 505dabaa42b824a489d426b9079c60d3, type: 2}
+  location: {x: 0, y: 0, z: 0}
+  questTask: {fileID: 0}
+--- !u!114 &-8440589189426059305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b81326cb0ba1de46a285039546a3536, type: 3}
+  m_Name: Task
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -584, y: 440}
+  ports:
+    keys:
+    - questTask
+    values:
+    - _fieldName: questTask
+      _node: {fileID: -8440589189426059305}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: tasks 0
+        node: {fileID: -2095786061493195144}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  taskType: 1
+  quantity: 10
+  item: {fileID: 11400000, guid: 505dabaa42b824a489d426b9079c60d3, type: 2}
+  location: {x: 0, y: 0, z: 0}
+  questTask: {fileID: 0}
+--- !u!114 &-2095786061493195144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
+  m_Name: Hegyek rejtelme
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: -56}
+  ports:
+    keys:
+    - preQuests
+    - nextQuests
+    - tasks
+    - Tasks 0
+    - tasks 0
+    - Tasks 1
+    - Tasks 2
+    - Tasks 3
+    - tasks 1
+    values:
+    - _fieldName: preQuests
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextQuests
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: preQuests
+        node: {fileID: -1149993863299080669}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: tasks
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: TaskNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Tasks 0
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: questTask
+        node: {fileID: -9130841039094188798}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: tasks 0
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: questTask
+        node: {fileID: -8440589189426059305}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: Tasks 1
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: Tasks 2
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: Tasks 3
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: tasks 1
+      _node: {fileID: -2095786061493195144}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: questTask
+        node: {fileID: -9130841039094188798}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  questName: Hegyek rejtelme
+  questDescrp: 
+  startOption: 0
+  tasks:
+  - {fileID: -8440589189426059305}
+  - {fileID: -9130841039094188798}
+  preQuests: 0
+  nextQuests: 0
+--- !u!114 &-1149993863299080669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
+  m_Name: "Alap felszerel\xE9s"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 248, y: -40}
+  ports:
+    keys:
+    - preQuests
+    - nextQuests
+    - tasks
+    values:
+    - _fieldName: preQuests
+      _node: {fileID: -1149993863299080669}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: nextQuests
+        node: {fileID: -2095786061493195144}
+        reroutePoints: []
+      - fieldName: nextQuests
+        node: {fileID: 3976953753869813228}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextQuests
+      _node: {fileID: -1149993863299080669}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: tasks
+      _node: {fileID: -1149993863299080669}
+      _typeQualifiedName: TaskNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  questName: "Alap felszerel\xE9s"
+  questDescrp: 
+  startOption: 0
+  tasks: []
+  preQuests: 0
+  nextQuests: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c692ec01ac8fe3419c5358a97ada862, type: 3}
+  m_Name: Quest Node Graph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -2095786061493195144}
+  - {fileID: -1149993863299080669}
+  - {fileID: -8440589189426059305}
+  - {fileID: -9130841039094188798}
+  - {fileID: 3976953753869813228}
+--- !u!114 &3976953753869813228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
+  m_Name: "Term\xE9szeti aj\xE1nd\xE9kok"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -184, y: 456}
+  ports:
+    keys:
+    - preQuests
+    - nextQuests
+    - tasks
+    values:
+    - _fieldName: preQuests
+      _node: {fileID: 3976953753869813228}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextQuests
+      _node: {fileID: 3976953753869813228}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: preQuests
+        node: {fileID: -1149993863299080669}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: tasks
+      _node: {fileID: 3976953753869813228}
+      _typeQualifiedName: TaskNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  questName: "Term\xE9szeti aj\xE1nd\xE9kok"
+  questDescrp: 
+  startOption: 0
+  tasks: []
+  preQuests: 0
+  nextQuests: 0

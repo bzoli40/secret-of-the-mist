@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
+[NodeTint("#5f9482")]
 public class QuestNode : Node
 {
     public string questName;
@@ -10,7 +11,7 @@ public class QuestNode : Node
     public QuestStartOption startOption;
 
     [Input(dynamicPortList = true)]
-    public List<TaskNode> tasks;
+    public TaskNode[] tasks;
 
     [Input] public int preQuests;
     [Output] public int nextQuests;
