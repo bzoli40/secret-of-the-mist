@@ -17,7 +17,14 @@ public class Interactable : MonoBehaviour
 
     public void AddEvent(string[] args)
     {
-        EventSystem.instance.NewEvent(EventType.INTERACT, args);
+        if (args.Length < 1) return;
+
+        switch (args[0])
+        {
+            case "Item":
+                EventSystem.instance.NewEvent(EventType.COLLECT, args);
+                break;
+        }
     }
 
     public string GetDisplayName()

@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
@@ -317,6 +319,13 @@ public class ThirdPersonController : MonoBehaviour
 
 			_animator.SetTrigger("attack");
 			_input.attack = false;
+			StartCoroutine(attackSlash());
         }
+    }
+
+	IEnumerator attackSlash()
+    {
+		yield return new WaitForSeconds(0.6f);
+		transform.GetChild(4).GetChild(0).GetComponent<VisualEffect>().Play();
     }
 }

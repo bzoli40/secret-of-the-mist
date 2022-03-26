@@ -22,7 +22,7 @@ public class EventSystem : MonoBehaviour
     public static EventSystem instance;
 
     List<EventObject> eventsStored;
-    public event Action onEventRecieved;
+    public event Action<EventObject> onEventRecieved;
 
     public float inGameTime = 0;
 
@@ -34,6 +34,7 @@ public class EventSystem : MonoBehaviour
     private void Start()
     {
         eventsStored = new List<EventObject>();
+        onEventRecieved += OnEventReceived;
     }
 
     private void FixedUpdate()
@@ -43,6 +44,26 @@ public class EventSystem : MonoBehaviour
 
     public void NewEvent(EventType _event, string[] _arguments)
     {
-        eventsStored.Add(new EventObject(_event, _arguments, inGameTime));
+        EventObject newEvent = new EventObject(_event, _arguments, inGameTime);
+
+        eventsStored.Add(newEvent);
+        onEventRecieved(newEvent);
+    }
+
+    public void OnEventReceived(EventObject eventHappened)
+    {
+        if(eventHappened.type == EventType.COLLECT)
+        {
+            GetComponent<NotificationHandler>().PushNotification(NotificationType.PICK_UP, eventHappened.args);
+        }
+    }
+
+    //
+    //
+    //
+
+    private void OnDestroy()
+    {
+        onEventRecieved -= OnEventReceived;
     }
 }

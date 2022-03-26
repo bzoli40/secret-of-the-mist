@@ -91,6 +91,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -121,6 +122,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - _Alpha_MinMax: {r: 0.11, g: 0.67, b: 0, a: 0}
     - _BaseColor: {r: 0.2705091, g: 0.8739185, b: 0.9063317, a: 1}
     - _Color: {r: 0.27050906, g: 0.8739185, b: 0.9063317, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
