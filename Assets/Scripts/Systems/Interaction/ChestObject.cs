@@ -12,6 +12,7 @@ public class ChestObject : Interactable
             interacted = true;
             interactable = false;
             GetComponent<Animator>().SetTrigger("Open");
+            AddEvent(new string[] { "Chest" });
         }
     }
 }

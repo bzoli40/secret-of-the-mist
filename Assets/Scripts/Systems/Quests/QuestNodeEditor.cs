@@ -9,22 +9,20 @@ using XNodeEditor;
 [CustomNodeEditor(typeof(QuestNode))]
 public class QuestNodeEditor : NodeEditor
 {
-    private QuestNode simpleNode;
-
     public override void OnBodyGUI()
     {
-        if (simpleNode == null) simpleNode = target as QuestNode;
+        QuestNode node = target as QuestNode;
 
         serializedObject.Update();
 
-        target.name = simpleNode.questName != "" ? simpleNode.questName : "Quest";
+        //target.name = simpleNode.questName != "" ? simpleNode.questName : "Quest";
 
         //
         // GUI
         //
 
         GUILayout.Label("Quest Name");
-        simpleNode.questName = GUILayout.TextField(simpleNode.questName, new GUILayoutOption[]
+        node.questName = EditorGUILayout.TextField(node.questName, new GUILayoutOption[]
             { 
                 GUILayout.MinWidth(200)
             });
@@ -32,14 +30,14 @@ public class QuestNodeEditor : NodeEditor
         //NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("questName"));
 
         GUILayout.Label("Quest Description");
-        simpleNode.questDescrp = GUILayout.TextArea(simpleNode.questDescrp, new GUILayoutOption[]
+        node.questDescrp = EditorGUILayout.TextArea(node.questDescrp, new GUILayoutOption[]
             {
                 GUILayout.MinHeight(50) 
             });
 
         EditorGUILayout.BeginHorizontal();
         GUILayout.Label("Quest Start");
-        simpleNode.startOption = (QuestStartOption)EditorGUILayout.EnumPopup(simpleNode.startOption);
+        node.startOption = (QuestStartOption)EditorGUILayout.EnumPopup(node.startOption);
         EditorGUILayout.EndHorizontal();
 
         /*for(int x = 0; x < simpleNode.tasks.Count; x++)
@@ -84,19 +82,19 @@ public class QuestNodeEditor : NodeEditor
 
         NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("tasks"));
 
-        for (int x = 0; x < simpleNode.tasks.Length; x++)
+        for (int x = 0; x < node.tasks.Length; x++)
         {
-            NodePort port = simpleNode.GetInputPort("tasks " + x);
-            simpleNode.tasks[x] = (port.ConnectionCount > 0) && (port.Connection != null) ? port.Connection.node as TaskNode : null;
+            NodePort port = node.GetInputPort("tasks " + x);
+            node.tasks[x] = (port.ConnectionCount > 0) && (port.Connection != null) ? port.Connection.node as TaskNode : null;
         }
 
         if (GUILayout.Button("Taskok lekérése"))
         {
-            Debug.Log(simpleNode.tasks.Length);
+            Debug.Log(node.tasks.Length);
 
-            for(int x = 0; x < simpleNode.tasks.Length; x++)
+            for(int x = 0; x < node.tasks.Length; x++)
             {
-                if (simpleNode.tasks[x] != null) Debug.Log(simpleNode.tasks[x].taskType);
+                if (node.tasks[x] != null) Debug.Log(node.tasks[x].taskType);
             }
         }
 
@@ -124,7 +122,7 @@ public class QuestNodeEditor : NodeEditor
         serializedObject.ApplyModifiedProperties();
     }
 
-    void ChangeTaskArray(bool increase)
+    /*void ChangeTaskArray(bool increase)
     {
         if (!increase && simpleNode.tasks.Length == 0) return;
 
@@ -136,5 +134,5 @@ public class QuestNodeEditor : NodeEditor
         }
 
         simpleNode.tasks = newList;
-    }
+    }*/
 }

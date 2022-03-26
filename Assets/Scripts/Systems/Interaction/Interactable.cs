@@ -12,7 +12,12 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact()
     {
-        //Interakció
+        AddEvent(null);
+    }
+
+    public void AddEvent(string[] args)
+    {
+        EventSystem.instance.NewEvent(EventType.INTERACT, args);
     }
 
     public string GetDisplayName()

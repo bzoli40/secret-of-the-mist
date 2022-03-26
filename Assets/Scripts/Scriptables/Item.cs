@@ -32,6 +32,11 @@ public class Item : ScriptableObject
         return codingName;
     }
 
+    public string GetDisplayName()
+    {
+        return displayName;
+    }
+
     public Sprite GetIcon()
     {
         return icon;

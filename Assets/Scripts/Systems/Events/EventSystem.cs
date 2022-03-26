@@ -24,7 +24,7 @@ public class EventSystem : MonoBehaviour
     List<EventObject> eventsStored;
     public event Action onEventRecieved;
 
-    float inGameTime = 0;
+    public float inGameTime = 0;
 
     private void Awake()
     {

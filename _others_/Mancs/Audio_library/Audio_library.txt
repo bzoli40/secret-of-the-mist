@@ -1,0 +1,16 @@
+1.mixkit-cinematic-transition-thunder-1284 	-- thunder magic spell? képesség hangja?
+2.mixkit-glass-hitting-a-metal-2183 		-- item felvétele? feladat teljesítése questen belül?
+3.mixkit-mechanical-technology-movements-3117 	-- romok közül item felvétele, bármi ami a romoknál van
+4.mixkit-metal-grill-quick-hit-2177 		-- item felvétel vagy kidobás, item áthelyezés
+5.mixkit-paper-slide-1530 			-- map elővétele, elrakása
+6.mixkit-shot-light-energy-flowing-2589 	-- szintlépés? képesség unlockolása? quest befejezése? új quest?
+7.mixkit-video-game-magic-item-unlock-2349 	-- item kidobása? 
+8.mixkit-evil-storm-atmosphere-2404		-- romok, általános ambience
+9.mixkit-wind-blowing-ambience-2658		-- általános ambience, a romokon kivűl
+10.mixkit-beast-long-roar-306			-- szörnyek hangja? 
+11.mixkit-fantasy-monster-grunt-1977		-- szörny halál
+12.mixkit-sword-slash-swoosh-1476		-- kard csapás, vágás I.
+13.mixkit-metal-hit-woosh-1485			-- kard csapás, vágás II.
+14.mixkit-human-fighter-pain-scream-2768	-- karakter halál
+15.mixkit-walking-on-grass-1921			-- séta, füves részen
+16.mixkit-coins-handling-1939			-- coin sound
