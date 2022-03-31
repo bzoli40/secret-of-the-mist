@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Task
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -584, y: 600}
+  position: {x: -536, y: 360}
   ports:
     keys:
     - questTask
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: Task
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -584, y: 440}
+  position: {x: -536, y: 200}
   ports:
     keys:
     - questTask
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: "Alap felszerel\xE9s"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 248, y: -40}
+  position: {x: 280, y: 200}
   ports:
     keys:
     - preQuests
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Name: "Term\xE9szeti aj\xE1nd\xE9kok"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -184, y: 456}
+  position: {x: -264, y: 456}
   ports:
     keys:
     - preQuests
