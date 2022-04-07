@@ -4590,20 +4590,23 @@ VisualEffect:
       - m_Value: 1
         m_Name: TailLifeTime
         m_Overridden: 0
-      - m_Value: 4
+      - m_Value: 5
         m_Name: Speed
-        m_Overridden: 0
-      - m_Value: 1
+        m_Overridden: 1
+      - m_Value: 0.2
         m_Name: LifeTime
         m_Overridden: 1
       - m_Value: 1
         m_Name: MaxHeight
-        m_Overridden: 0
-      - m_Value: 10
+        m_Overridden: 1
+      - m_Value: 6
         m_Name: Size
         m_Overridden: 1
     m_Vector2f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 5, y: 1}
+        m_Name: Size XZ
+        m_Overridden: 1
     m_Vector3f:
       m_Array: []
     m_Vector4f:
@@ -4623,25 +4626,25 @@ VisualEffect:
       m_Array:
       - m_Value:
           serializedVersion: 2
-          key0: {r: 8, g: 4.54902, b: 0, a: 1}
-          key1: {r: 7.7058825, g: 4.2906575, b: 0.15340255, a: 0}
-          key2: {r: 4, g: 1.0352942, b: 2.0862746, a: 0.8}
-          key3: {r: 0, g: 0, b: 0, a: 0}
-          key4: {r: 0, g: 0, b: 0, a: 0}
-          key5: {r: 0, g: 0, b: 0, a: 0}
+          key0: {r: 7.999999, g: 0, b: 1.5288352, a: 1}
+          key1: {r: 0.16137959, g: 0.3207344, b: 7.7058825, a: 0}
+          key2: {r: 4, g: 1.0352942, b: 2.0862746, a: 0}
+          key3: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+          key4: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+          key5: {r: 0.17254902, g: 0.17254902, b: 0.17254902, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
           ctime1: 37586
           ctime2: 65535
-          ctime3: 0
-          ctime4: 0
-          ctime5: 0
+          ctime3: 65342
+          ctime4: 65342
+          ctime5: 65342
           ctime6: 0
           ctime7: 0
           atime0: 0
           atime1: 65535
-          atime2: 52428
+          atime2: 65535
           atime3: 65535
           atime4: 0
           atime5: 0
@@ -4651,6 +4654,37 @@ VisualEffect:
           m_NumColorKeys: 3
           m_NumAlphaKeys: 2
         m_Name: ElectricityColor
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0, g: 0, b: 0, a: 1}
+          key1: {r: 0, g: 0, b: 0, a: 0.58431375}
+          key2: {r: 4, g: 1.0352942, b: 2.0862746, a: 0}
+          key3: {r: 0, g: 0, b: 0, a: 0}
+          key4: {r: 0, g: 0, b: 0, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 65535
+          ctime3: 0
+          ctime4: 0
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 26792
+          atime2: 65535
+          atime3: 65535
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 3
+        m_Name: BackgroundColor
         m_Overridden: 1
     m_NamedObject:
       m_Array: []
@@ -4664,7 +4698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421266419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.38, y: 60.07, z: 7.92}
+  m_LocalPosition: {x: 10.293, y: 63.43, z: 2.001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
