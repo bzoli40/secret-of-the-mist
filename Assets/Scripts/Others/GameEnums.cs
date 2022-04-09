@@ -18,7 +18,7 @@ public enum QuestStartOption { AUTOMATIC, NPC_TALK };
 public enum TaskType { KILL, COLLECT, GO_TO, TALK_TO, ETC };
 
 //Event enums
-public enum EventType { COLLECT, DROP, KILL, CRAFT, INTERACT };
+public enum EventCategory { COLLECT, DROP, KILL, CRAFT, INTERACT };
 
 //Notification enums
 public enum NotificationType { PICK_UP };

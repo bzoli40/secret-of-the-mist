@@ -12,6 +12,7 @@ public class DevConsoleSystem : MonoBehaviour
 
     //Parancsok
     public static DevCommand<string, int> ADD_ITEM;
+    public static DevCommand<string> SUMMON_EFFECT;
 
     //Parancs-lista
     public List<object> commands;
@@ -34,9 +35,16 @@ public class DevConsoleSystem : MonoBehaviour
             Debug.Log("Item hozzáadva!");
         });
 
+        SUMMON_EFFECT = new DevCommand<string>("summon_effect", "Summon the EFFECT with the AMOUNT", "summon_effect", (x) =>
+        {
+            GameObject.FindGameObjectWithTag("GameSystem").transform.GetChild(0).GetComponent<EffectLibrary>().SummonEffect(x);
+            Debug.Log("Effekt leidézve!");
+        });
+
         commands = new List<object>
         {
-            ADD_ITEM
+            ADD_ITEM,
+            SUMMON_EFFECT
         };
     }
 
@@ -89,6 +97,10 @@ public class DevConsoleSystem : MonoBehaviour
                 if (commands[x] as DevCommand != null)
                 {
                     (commands[x] as DevCommand).Invoke();
+                }
+                else if(commands[x] as DevCommand<string> != null)
+                {
+                    (commands[x] as DevCommand<string>).Invoke(args[1]);
                 }
                 else if (commands[x] as DevCommand<string, int> != null)
                 {

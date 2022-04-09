@@ -6,10 +6,10 @@ using UnityEngine;
 public class EventObject
 {
     public double happened;
-    public EventType type;
+    public EventCategory type;
     public string[] args;
 
-    public EventObject(EventType _t, string[] _a, double _h)
+    public EventObject(EventCategory _t, string[] _a, double _h)
     {
         type = _t;
         args = _a;
@@ -42,7 +42,7 @@ public class EventSystem : MonoBehaviour
         inGameTime += Time.fixedDeltaTime;
     }
 
-    public void NewEvent(EventType _event, string[] _arguments)
+    public void NewEvent(EventCategory _event, string[] _arguments)
     {
         EventObject newEvent = new EventObject(_event, _arguments, inGameTime);
 
@@ -52,7 +52,7 @@ public class EventSystem : MonoBehaviour
 
     public void OnEventReceived(EventObject eventHappened)
     {
-        if(eventHappened.type == EventType.COLLECT)
+        if(eventHappened.type == EventCategory.COLLECT)
         {
             GetComponent<NotificationHandler>().PushNotification(NotificationType.PICK_UP, eventHappened.args);
         }
