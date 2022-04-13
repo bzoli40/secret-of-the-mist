@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour
         switch (args[0])
         {
             case "Item":
-                EventSystem.instance.NewEvent(EventType.COLLECT, args);
+                EventSystem.instance.NewEvent(EventCategory.COLLECT, args);
                 break;
         }
     }

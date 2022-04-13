@@ -36,6 +36,21 @@ public class DevCommand : DevCommandBase
     }
 }
 
+public class DevCommand<T1> : DevCommandBase
+{
+    private Action<T1> _cmdAction;
+
+    public DevCommand(string i, string d, string f, Action<T1> a) : base(i, d, f)
+    {
+        this._cmdAction = a;
+    }
+
+    public void Invoke(T1 value1)
+    {
+        _cmdAction.Invoke(value1);
+    }
+}
+
 public class DevCommand<T1, T2> : DevCommandBase
 {
     private Action<T1, T2> _cmdAction;
