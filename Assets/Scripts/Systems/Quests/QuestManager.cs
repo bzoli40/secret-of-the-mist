@@ -58,9 +58,9 @@ public class QuestManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         currentQuest = newQuest;
 
-        string[] arguments = new string[] { "Új küldetés" , newQuest.questName, newQuest.questCode };
+        string[] arguments = new string[] { newQuest.questName, newQuest.questCode };
 
-        EventSystem.instance.NewEvent(EventCategory.QUEST, arguments);
+        EventSystem.instance.NewEvent(EventCategory.QUEST, arguments, QuestStatus.STARTED);
     }
 
     void ResumeQuest()
