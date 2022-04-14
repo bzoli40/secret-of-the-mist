@@ -6,15 +6,17 @@ using XNode;
 [NodeTint("#5f9482")]
 public class QuestNode : Node
 {
+    public string questCode;
+
     public string questName;
     public string questDescrp;
     public QuestStartOption startOption;
 
     [Input(dynamicPortList = true)]
-    public TaskNode[] tasks;
+    public TaskNode[] tasks = new TaskNode[0];
 
-    [Input] public int preQuests;
-    [Output] public int nextQuests;
+    [Input] public QuestNode[] preQuests = new QuestNode[0];
+    [Output] public QuestNode[] nextQuests = new QuestNode[0];
 
     public override object GetValue(NodePort port)
     {

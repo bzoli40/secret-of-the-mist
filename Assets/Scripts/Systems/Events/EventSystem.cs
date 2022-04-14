@@ -52,9 +52,14 @@ public class EventSystem : MonoBehaviour
 
     public void OnEventReceived(EventObject eventHappened)
     {
-        if(eventHappened.type == EventCategory.COLLECT)
+        switch (eventHappened.type)
         {
-            GetComponent<NotificationHandler>().PushNotification(NotificationType.PICK_UP, eventHappened.args);
+            case EventCategory.COLLECT:
+                GetComponent<NotificationHandler>().PushNotification(NotificationType.PICK_UP, eventHappened.args);
+                break;
+            case EventCategory.QUEST:
+                GetComponent<NotificationHandler>().PushNotification(NotificationType.QUEST_STATE_CHANGE, eventHappened.args);
+                break;
         }
     }
 

@@ -21,6 +21,12 @@ public class QuestNodeEditor : NodeEditor
         // GUI
         //
 
+        GUILayout.Label("Quest Coding Name");
+        node.questCode = EditorGUILayout.TextField(node.questCode, new GUILayoutOption[]
+            {
+                GUILayout.MinWidth(200)
+            });
+
         GUILayout.Label("Quest Name");
         node.questName = EditorGUILayout.TextField(node.questName, new GUILayoutOption[]
             { 
@@ -88,6 +94,13 @@ public class QuestNodeEditor : NodeEditor
             node.tasks[x] = (port.ConnectionCount > 0) && (port.Connection != null) ? port.Connection.node as TaskNode : null;
         }
 
+        node.preQuests = new QuestNode[node.GetInputPort("preQuests").ConnectionCount];
+        for (int x = 0; x < node.GetInputPort("preQuests").ConnectionCount; x++)
+        {
+            Node prePortX = node.GetInputPort("preQuests").GetConnection(x).node;
+            node.preQuests[x] = prePortX as QuestNode;
+        }
+
         if (GUILayout.Button("Taskok lekérése"))
         {
             Debug.Log(node.tasks.Length);
@@ -101,10 +114,15 @@ public class QuestNodeEditor : NodeEditor
         if (GUILayout.Button("Követelmény küldetése"))
         {
             NodePort port = target.GetInputPort("preQuests");
-            for (int x = 0; x < port.ConnectionCount; x++)
+            /*for (int x = 0; x < port.ConnectionCount; x++)
             {
                 Node childNode = port.GetConnection(x).node;
                 Debug.Log(((QuestNode)childNode).questName);
+            }*/
+
+            for(int x = 0; x < node.preQuests.Length; x++)
+            {
+                Debug.Log(node.preQuests[x].questName);
             }
         }
 

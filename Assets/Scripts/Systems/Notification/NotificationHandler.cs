@@ -9,6 +9,9 @@ public class NotificationHandler : MonoBehaviour
     public GameObject pickUpNotiPref;
     public Transform pickUpNotiTrans;
 
+    [Header("Quest State Change")]
+    public Transform questNotiTrans;
+
     public void PushNotification(NotificationType type, string[] args)
     {
         switch (type)
@@ -23,6 +26,12 @@ public class NotificationHandler : MonoBehaviour
                 GameObject notifInst = Instantiate(notif, pickUpNotiTrans);
 
                 StartCoroutine(DestroyNotification(1.5f, notifInst.GetComponent<Animator>()));
+                break;
+            case NotificationType.QUEST_STATE_CHANGE:
+                questNotiTrans.GetChild(2).GetComponent<Text>().text = args[0];
+                questNotiTrans.GetChild(3).GetComponent<Text>().text = "- " + args[1] + " -";
+
+                questNotiTrans.GetComponent<Animator>().SetTrigger("QuestStateChange");
                 break;
         }
     }

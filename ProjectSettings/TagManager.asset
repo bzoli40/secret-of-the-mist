@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - GameSystem
   - GrassLayer
+  - MainAudio
   layers:
   - Default
   - TransparentFX
