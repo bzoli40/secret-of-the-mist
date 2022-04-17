@@ -7,11 +7,13 @@ TagManager:
   - CinemachineTarget
   - Interactable
   - GameSystem
+  - GrassLayer
+  - MainAudio
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Grass
   - Water
   - UI
   - 

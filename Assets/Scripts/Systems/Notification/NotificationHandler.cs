@@ -9,7 +9,10 @@ public class NotificationHandler : MonoBehaviour
     public GameObject pickUpNotiPref;
     public Transform pickUpNotiTrans;
 
-    public void PushNotification(NotificationType type, string[] args)
+    [Header("Quest State Change")]
+    public Transform questNotiTrans;
+
+    public void PushNotification(NotificationType type, string[] args, object subArg = null)
     {
         switch (type)
         {
@@ -23,6 +26,17 @@ public class NotificationHandler : MonoBehaviour
                 GameObject notifInst = Instantiate(notif, pickUpNotiTrans);
 
                 StartCoroutine(DestroyNotification(1.5f, notifInst.GetComponent<Animator>()));
+                break;
+            case NotificationType.QUEST_STATE_CHANGE:
+
+                string typeString = "";
+
+                if (subArg != null && subArg.Equals(QuestStatus.STARTED)) typeString = "Új küldetés";
+
+                questNotiTrans.GetChild(2).GetComponent<Text>().text = typeString;
+                questNotiTrans.GetChild(3).GetComponent<Text>().text = "- " + args[0] + " -";
+
+                questNotiTrans.GetComponent<Animator>().SetTrigger("QuestStateChange");
                 break;
         }
     }

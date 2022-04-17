@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Task
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -536, y: 360}
+  position: {x: -600, y: 376}
   ports:
     keys:
     - questTask
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: Task
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -536, y: 200}
+  position: {x: -600, y: 216}
   ports:
     keys:
     - questTask
@@ -101,8 +101,8 @@ MonoBehaviour:
     values:
     - _fieldName: preQuests
       _node: {fileID: -2095786061493195144}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
+      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
       connections: []
       _direction: 0
       _connectionType: 0
@@ -110,8 +110,8 @@ MonoBehaviour:
       _dynamic: 0
     - _fieldName: nextQuests
       _node: {fileID: -2095786061493195144}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
+      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
       connections:
       - fieldName: preQuests
         node: {fileID: -1149993863299080669}
@@ -192,14 +192,14 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
-  questName: Hegyek rejtelmeawedw
+  questName: Hegyek rejtelme
   questDescrp: sd
   startOption: 0
   tasks:
   - {fileID: -8440589189426059305}
   - {fileID: -9130841039094188798}
-  preQuests: 0
-  nextQuests: 0
+  preQuests: []
+  nextQuests: []
 --- !u!114 &-1149993863299080669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,8 +222,8 @@ MonoBehaviour:
     values:
     - _fieldName: preQuests
       _node: {fileID: -1149993863299080669}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
+      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
       connections:
       - fieldName: nextQuests
         node: {fileID: -2095786061493195144}
@@ -237,8 +237,8 @@ MonoBehaviour:
       _dynamic: 0
     - _fieldName: nextQuests
       _node: {fileID: -1149993863299080669}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
+      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
       connections: []
       _direction: 1
       _connectionType: 0
@@ -257,8 +257,10 @@ MonoBehaviour:
   questDescrp: aaa
   startOption: 0
   tasks: []
-  preQuests: 0
-  nextQuests: 0
+  preQuests:
+  - {fileID: -2095786061493195144}
+  - {fileID: 3976953753869813228}
+  nextQuests: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,8 +301,8 @@ MonoBehaviour:
     values:
     - _fieldName: preQuests
       _node: {fileID: 3976953753869813228}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
+      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
       connections: []
       _direction: 0
       _connectionType: 0
@@ -308,8 +310,8 @@ MonoBehaviour:
       _dynamic: 0
     - _fieldName: nextQuests
       _node: {fileID: 3976953753869813228}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
+      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
       connections:
       - fieldName: preQuests
         node: {fileID: -1149993863299080669}
@@ -331,5 +333,5 @@ MonoBehaviour:
   questDescrp: 
   startOption: 0
   tasks: []
-  preQuests: 0
-  nextQuests: 0
+  preQuests: []
+  nextQuests: []
