@@ -7,8 +7,29 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MAT_GRASS
+    second: {fileID: 2100000, guid: 3d1a73ef92a1dc5489e9d152e6cd11c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_GRASSY
+    second: {fileID: 2100000, guid: 3d1a73ef92a1dc5489e9d152e6cd11c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_MOUNTAIN
+    second: {fileID: 2100000, guid: 571c2a25e8310fd49862aa21b7d2e5f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_STONE
+    second: {fileID: 2100000, guid: 571c2a25e8310fd49862aa21b7d2e5f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material
-    second: {fileID: 2100000, guid: dcc191249a4662c4a84b01a8da414b7c, type: 2}
+    second: {fileID: -131709949291178434, guid: b07d0d656ee017645a972f98407664c6,
+      type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
