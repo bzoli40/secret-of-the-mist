@@ -8,12 +8,14 @@ public class EventObject
     public double happened;
     public EventCategory type;
     public string[] args;
+    public object arg_bonus;
 
-    public EventObject(EventCategory _t, string[] _a, double _h)
+    public EventObject(EventCategory _t, string[] _a, double _h, object _b)
     {
         type = _t;
         args = _a;
         happened = _h;
+        arg_bonus = _b;
     }
 }
 
@@ -42,9 +44,9 @@ public class EventSystem : MonoBehaviour
         inGameTime += Time.fixedDeltaTime;
     }
 
-    public void NewEvent(EventCategory _event, string[] _arguments)
+    public void NewEvent(EventCategory _event, string[] _arguments, object _arg_bonus = null)
     {
-        EventObject newEvent = new EventObject(_event, _arguments, inGameTime);
+        EventObject newEvent = new EventObject(_event, _arguments, inGameTime, _arg_bonus);
 
         eventsStored.Add(newEvent);
         onEventRecieved(newEvent);
@@ -58,7 +60,7 @@ public class EventSystem : MonoBehaviour
                 GetComponent<NotificationHandler>().PushNotification(NotificationType.PICK_UP, eventHappened.args);
                 break;
             case EventCategory.QUEST:
-                GetComponent<NotificationHandler>().PushNotification(NotificationType.QUEST_STATE_CHANGE, eventHappened.args);
+                GetComponent<NotificationHandler>().PushNotification(NotificationType.QUEST_STATE_CHANGE, eventHappened.args, eventHappened.arg_bonus);
                 break;
         }
     }

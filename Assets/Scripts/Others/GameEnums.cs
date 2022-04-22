@@ -22,3 +22,6 @@ public enum EventCategory { COLLECT, DROP, KILL, CRAFT, INTERACT, QUEST };
 
 //Notification enums
 public enum NotificationType { PICK_UP, QUEST_STATE_CHANGE };
+
+//Quest enums
+public enum QuestStatus { STARTED, CURRENT, FINISHED, STOPPED };
