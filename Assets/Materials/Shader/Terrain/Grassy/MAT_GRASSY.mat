@@ -93,7 +93,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
-    - _Border: 20.39
+    - _Border: 10
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -103,20 +103,21 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _Fresnel_Pow: 0.15
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metalic: 0
     - _Metallic: 0
     - _Mode: 0
-    - _Noise_Scale: 500
+    - _Noise_Scale: 287.68
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PebbleNoise: 10
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.34
+    - _Smoothness: 0.29
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -126,11 +127,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
-    - _BorderColor: {r: 0.51541764, g: 0.5849056, b: 0.42764327, a: 1}
+    - _BorderColor: {r: 0.5798006, g: 0.8301887, b: 0.28586686, a: 1}
     - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
-    - _ColorDarker: {r: 0.47118604, g: 0.754717, b: 0.1459594, a: 0}
-    - _ColorLighter: {r: 0.19176587, g: 0.6792453, b: 0.054467767, a: 0}
+    - _ColorDarker: {r: 0.51998043, g: 0.7924528, b: 0.20558919, a: 0}
+    - _ColorLighter: {r: 0.5552095, g: 0.8962264, b: 0.38470095, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PebbleColor: {r: 0.4433962, g: 0.3019547, b: 0.16522783, a: 1}
+    - _PebbleColor: {r: 0.5566038, g: 0.47236934, b: 0.39119795, a: 1}
+    - _SmoothnessMinMax: {r: 0.2, g: 0.5, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

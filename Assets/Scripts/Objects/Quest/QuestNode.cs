@@ -12,8 +12,10 @@ public class QuestNode : Node
     public string questDescrp;
     public QuestStartOption startOption;
 
-    [Input(dynamicPortList = true)]
-    public TaskNode[] tasks = new TaskNode[0];
+    public QuestStatus status = QuestStatus.NOT_STARTED;
+    public int progress = 0;
+
+    public TaskObject[] tasks;
 
     [Input] public QuestNode[] preQuests = new QuestNode[0];
     [Output] public QuestNode[] nextQuests = new QuestNode[0];

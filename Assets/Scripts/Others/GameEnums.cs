@@ -21,7 +21,7 @@ public enum TaskType { KILL, COLLECT, GO_TO, TALK_TO, ETC };
 public enum EventCategory { COLLECT, DROP, KILL, CRAFT, INTERACT, QUEST };
 
 //Notification enums
-public enum NotificationType { PICK_UP, QUEST_STATE_CHANGE };
+public enum NotificationType { COLLECT, QUEST_STATE_CHANGE };
 
 //Quest enums
-public enum QuestStatus { STARTED, CURRENT, FINISHED, STOPPED };
+public enum QuestStatus { NOT_STARTED, STARTED, FINISHED, STOPPED };

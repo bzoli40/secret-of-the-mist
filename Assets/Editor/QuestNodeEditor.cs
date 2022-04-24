@@ -9,13 +9,15 @@ using XNodeEditor;
 [CustomNodeEditor(typeof(QuestNode))]
 public class QuestNodeEditor : NodeEditor
 {
+    bool seen = true;
+
     public override void OnBodyGUI()
     {
         QuestNode node = target as QuestNode;
 
         serializedObject.Update();
 
-        //target.name = simpleNode.questName != "" ? simpleNode.questName : "Quest";
+        target.name = node.questName != "" ? node.questName : "Quest";
 
         //
         // GUI
@@ -86,13 +88,15 @@ public class QuestNodeEditor : NodeEditor
         { ChangeTaskArray(false); }
         EditorGUILayout.EndHorizontal();*/
 
-        NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("tasks"));
+        //NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("tasks"));
 
-        for (int x = 0; x < node.tasks.Length; x++)
-        {
-            NodePort port = node.GetInputPort("tasks " + x);
-            node.tasks[x] = (port.ConnectionCount > 0) && (port.Connection != null) ? port.Connection.node as TaskNode : null;
-        }
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("tasks"));
+
+        //for (int x = 0; x < node.tasks.Length; x++)
+        //{
+        //    NodePort port = node.GetInputPort("tasks " + x);
+        //    node.tasks[x] = (port.ConnectionCount > 0) && (port.Connection != null) ? port.Connection.node as TaskNode : null;
+        //}
 
         node.preQuests = new QuestNode[node.GetInputPort("preQuests").ConnectionCount];
         for (int x = 0; x < node.GetInputPort("preQuests").ConnectionCount; x++)

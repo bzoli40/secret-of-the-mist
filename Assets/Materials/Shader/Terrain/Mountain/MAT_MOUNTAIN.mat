@@ -47,12 +47,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Metalic: 0
     - _Noise_Scale: 1.46
     - _Noise_Scale_2: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Smoothness: 0.45
     m_Colors:
+    - _Basic: {r: 0.469918, g: 0.5682006, b: 0.6037736, a: 1}
     - _Color: {r: 0, g: 0, b: 0, a: 1}
-    - _Tiling: {r: 100, g: 1001, b: 0, a: 0}
-    - _Tiling_2: {r: 62.8, g: 71.7, b: 0, a: 0}
+    - _Dark: {r: 0, g: 0.9809995, b: 1, a: 1}
+    - _Darker: {r: 1, g: 0, b: 0, a: 1}
+    - _Tiling: {r: 107.6, g: 0, b: 0, a: 0}
+    - _Tiling_2: {r: -59.2, g: 95.8, b: 0, a: 0}
+    - _Where: {r: 0.4, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []

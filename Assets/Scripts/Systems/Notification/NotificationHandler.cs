@@ -16,7 +16,7 @@ public class NotificationHandler : MonoBehaviour
     {
         switch (type)
         {
-            case NotificationType.PICK_UP:
+            case NotificationType.COLLECT:
                 Item item = transform.GetChild(0).GetComponent<ItemLibrary>().findItem(args[1]);
 
                 GameObject notif = pickUpNotiPref;
@@ -32,6 +32,7 @@ public class NotificationHandler : MonoBehaviour
                 string typeString = "";
 
                 if (subArg != null && subArg.Equals(QuestStatus.STARTED)) typeString = "Új küldetés";
+                if (subArg != null && subArg.Equals(QuestStatus.FINISHED)) typeString = "Küldetés lezárva";
 
                 questNotiTrans.GetChild(2).GetComponent<Text>().text = typeString;
                 questNotiTrans.GetChild(3).GetComponent<Text>().text = "- " + args[0] + " -";

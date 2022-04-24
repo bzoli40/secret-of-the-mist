@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9130841039094188798
+--- !u!114 &-5694948405324156368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,70 +9,62 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b81326cb0ba1de46a285039546a3536, type: 3}
-  m_Name: Task
+  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
+  m_Name: "Sz\xFAr\xF3 rabl\xF3k"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -600, y: 376}
+  position: {x: 712, y: 440}
   ports:
     keys:
-    - questTask
+    - preQuests
+    - nextQuests
+    - tasks 0
     values:
-    - _fieldName: questTask
-      _node: {fileID: -9130841039094188798}
-      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    - _fieldName: preQuests
+      _node: {fileID: -5694948405324156368}
+      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
-      - fieldName: Tasks 0
-        node: {fileID: -2095786061493195144}
+      - fieldName: nextQuests
+        node: {fileID: 3976953753869813228}
         reroutePoints: []
-      - fieldName: tasks 1
-        node: {fileID: -2095786061493195144}
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextQuests
+      _node: {fileID: -5694948405324156368}
+      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: preQuests
+        node: {fileID: 3305896484095546485}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  taskType: 0
-  quantity: 10
-  item: {fileID: 11400000, guid: 505dabaa42b824a489d426b9079c60d3, type: 2}
-  location: {x: 0, y: 0, z: 0}
-  questTask: {fileID: 0}
---- !u!114 &-8440589189426059305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b81326cb0ba1de46a285039546a3536, type: 3}
-  m_Name: Task
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -600, y: 216}
-  ports:
-    keys:
-    - questTask
-    values:
-    - _fieldName: questTask
-      _node: {fileID: -8440589189426059305}
+    - _fieldName: tasks 0
+      _node: {fileID: -5694948405324156368}
       _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections:
-      - fieldName: tasks 0
-        node: {fileID: -2095786061493195144}
-        reroutePoints: []
-      _direction: 1
+      connections: []
+      _direction: 0
       _connectionType: 0
       _typeConstraint: 0
-      _dynamic: 0
-  taskType: 1
-  quantity: 10
-  item: {fileID: 11400000, guid: 505dabaa42b824a489d426b9079c60d3, type: 2}
-  location: {x: 0, y: 0, z: 0}
-  questTask: {fileID: 0}
+      _dynamic: 1
+  questCode: stabing_thieves
+  questName: "Sz\xFAr\xF3 rabl\xF3k"
+  questDescrp: "Nyilv\xE1n elvitt\xE9k a kulcsot. B\xE1rki is volt nem fog sok\xE1ig
+    \xE9lni"
+  startOption: 0
+  status: 0
+  progress: 0
+  tasks:
+  - {fileID: 0}
+  preQuests:
+  - {fileID: 3976953753869813228}
+  nextQuests: []
 --- !u!114 &-2095786061493195144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,18 +78,16 @@ MonoBehaviour:
   m_Name: Hegyek rejtelme
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -264, y: -56}
+  position: {x: -408, y: -8}
   ports:
     keys:
     - preQuests
     - nextQuests
-    - tasks
     - Tasks 0
     - tasks 0
     - Tasks 1
     - Tasks 2
     - Tasks 3
-    - tasks 1
     values:
     - _fieldName: preQuests
       _node: {fileID: -2095786061493195144}
@@ -116,16 +106,10 @@ MonoBehaviour:
       - fieldName: preQuests
         node: {fileID: -1149993863299080669}
         reroutePoints: []
+      - fieldName: preQuests
+        node: {fileID: 3976953753869813228}
+        reroutePoints: []
       _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: tasks
-      _node: {fileID: -2095786061493195144}
-      _typeQualifiedName: TaskNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
@@ -133,10 +117,7 @@ MonoBehaviour:
       _node: {fileID: -2095786061493195144}
       _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections:
-      - fieldName: questTask
-        node: {fileID: -9130841039094188798}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 0
@@ -145,10 +126,7 @@ MonoBehaviour:
       _node: {fileID: -2095786061493195144}
       _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections:
-      - fieldName: questTask
-        node: {fileID: -8440589189426059305}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -180,24 +158,14 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 1
-    - _fieldName: tasks 1
-      _node: {fileID: -2095786061493195144}
-      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: questTask
-        node: {fileID: -9130841039094188798}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
+  questCode: mount_mist
   questName: Hegyek rejtelme
-  questDescrp: sd
+  questDescrp: "Vajon mit rejtenek ez a k\xFCl\xF6n\xF6s hely?\nItt az id\u0151 felfedezni"
   startOption: 0
+  status: 2
+  progress: 1
   tasks:
-  - {fileID: -8440589189426059305}
-  - {fileID: -9130841039094188798}
+  - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
   preQuests: []
   nextQuests: []
 --- !u!114 &-1149993863299080669
@@ -210,15 +178,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
-  m_Name: "Alap felszerel\xE9s"
+  m_Name: "Amit a term\xE9szet adhat"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 280, y: 200}
+  position: {x: 456, y: -264}
   ports:
     keys:
     - preQuests
     - nextQuests
-    - tasks
+    - tasks 0
+    - tasks 1
     values:
     - _fieldName: preQuests
       _node: {fileID: -1149993863299080669}
@@ -228,9 +197,6 @@ MonoBehaviour:
       - fieldName: nextQuests
         node: {fileID: -2095786061493195144}
         reroutePoints: []
-      - fieldName: nextQuests
-        node: {fileID: 3976953753869813228}
-        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -239,27 +205,44 @@ MonoBehaviour:
       _node: {fileID: -1149993863299080669}
       _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: preQuests
+        node: {fileID: 3305896484095546485}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: tasks
+    - _fieldName: tasks 0
       _node: {fileID: -1149993863299080669}
-      _typeQualifiedName: TaskNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
-      _dynamic: 0
-  questName: "Alap felszerel\xE9s"
-  questDescrp: aaa
+      _dynamic: 1
+    - _fieldName: tasks 1
+      _node: {fileID: -1149993863299080669}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  questCode: what_nature_can_give
+  questName: "Amit a term\xE9szet adhat"
+  questDescrp: "B\xE1rmi t\xF6rt\xE9nhet az \xFAt alatt, ez\xE9rt fel kell szerelkezni,
+    ameddig lehet"
   startOption: 0
-  tasks: []
+  status: 0
+  progress: 0
+  tasks:
+  - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
+  - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
   preQuests:
   - {fileID: -2095786061493195144}
-  - {fileID: 3976953753869813228}
   nextQuests: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -276,9 +259,107 @@ MonoBehaviour:
   nodes:
   - {fileID: -2095786061493195144}
   - {fileID: -1149993863299080669}
-  - {fileID: -8440589189426059305}
-  - {fileID: -9130841039094188798}
   - {fileID: 3976953753869813228}
+  - {fileID: -5694948405324156368}
+  - {fileID: 3305896484095546485}
+--- !u!114 &3305896484095546485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
+  m_Name: "Elveszett tud\xE1s - 2"
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1224, y: -8}
+  ports:
+    keys:
+    - preQuests
+    - nextQuests
+    - tasks 0
+    - tasks 1
+    - tasks 2
+    - tasks 3
+    values:
+    - _fieldName: preQuests
+      _node: {fileID: 3305896484095546485}
+      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: nextQuests
+        node: {fileID: -1149993863299080669}
+        reroutePoints: []
+      - fieldName: nextQuests
+        node: {fileID: -5694948405324156368}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextQuests
+      _node: {fileID: 3305896484095546485}
+      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: tasks 0
+      _node: {fileID: 3305896484095546485}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: tasks 1
+      _node: {fileID: 3305896484095546485}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: tasks 2
+      _node: {fileID: 3305896484095546485}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: tasks 3
+      _node: {fileID: 3305896484095546485}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  questCode: lost_knowledge-2
+  questName: "Elveszett tud\xE1s - 2"
+  questDescrp: "Megvan a kulcs, m\xE1rcsak a felder\xEDt\xE9s maradt"
+  startOption: 0
+  status: 0
+  progress: 0
+  tasks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  preQuests:
+  - {fileID: -1149993863299080669}
+  - {fileID: -5694948405324156368}
+  nextQuests: []
 --- !u!114 &3976953753869813228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,21 +370,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
-  m_Name: "Term\xE9szeti aj\xE1nd\xE9kok"
+  m_Name: "Elveszett tud\xE1s - 1"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -264, y: 456}
+  position: {x: 248, y: 424}
   ports:
     keys:
     - preQuests
     - nextQuests
-    - tasks
+    - tasks 0
+    - tasks 1
     values:
     - _fieldName: preQuests
       _node: {fileID: 3976953753869813228}
       _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: nextQuests
+        node: {fileID: -2095786061493195144}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -314,24 +399,39 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: preQuests
-        node: {fileID: -1149993863299080669}
+        node: {fileID: -5694948405324156368}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: tasks
+    - _fieldName: tasks 0
       _node: {fileID: 3976953753869813228}
-      _typeQualifiedName: TaskNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
-      _dynamic: 0
-  questName: "Term\xE9szeti aj\xE1nd\xE9kok"
-  questDescrp: 
+      _dynamic: 1
+    - _fieldName: tasks 1
+      _node: {fileID: 3976953753869813228}
+      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  questCode: lost_knowledge-1
+  questName: "Elveszett tud\xE1s - 1"
+  questDescrp: "Van valahol itt egy rom. Meg k\xE9ne n\xE9zni"
   startOption: 0
-  tasks: []
-  preQuests: []
+  status: 0
+  progress: 0
+  tasks:
+  - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
+  - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
+  preQuests:
+  - {fileID: -2095786061493195144}
   nextQuests: []
