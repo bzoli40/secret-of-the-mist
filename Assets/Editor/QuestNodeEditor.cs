@@ -9,8 +9,6 @@ using XNodeEditor;
 [CustomNodeEditor(typeof(QuestNode))]
 public class QuestNodeEditor : NodeEditor
 {
-    bool seen = true;
-
     public override void OnBodyGUI()
     {
         QuestNode node = target as QuestNode;

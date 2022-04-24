@@ -3100,6 +3100,9 @@ MonoBehaviour:
   inventoryPT: {fileID: 2078636492}
   taskPT: {fileID: 957445015}
   questListPT: {fileID: 1363237410}
+  taskIcons:
+  - {fileID: 1128361133, guid: 43d2db934f852124983c376205813d24, type: 3}
+  - {fileID: 316163131, guid: 43d2db934f852124983c376205813d24, type: 3}
 --- !u!114 &850052524
 MonoBehaviour:
   m_ObjectHideFlags: 0

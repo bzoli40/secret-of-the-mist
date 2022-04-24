@@ -25,6 +25,9 @@ public class UI_System : MonoBehaviour
     private List<GameObject> questTopIconsObjs = new();
     private List<GameObject> questTasksObjs = new();
 
+    //Images
+    public List<Sprite> taskIcons = new();
+
     //QuestBar
     private string currentlyShownQuest;
     private int currentlyShownTask;
@@ -163,6 +166,9 @@ public class UI_System : MonoBehaviour
         string taskString = currentT.taskDescr;
         string taskCounter = currentT.quantity > 1 ? " (" + currentT.counter + "/" + currentT.quantity + ")" : "";
 
+        Sprite whichType = taskIcons.Find(x => x.name == "task_type_icons_" + currentT.taskType.ToString().ToLower());
+
+        if (whichType != null) taskPT.GetChild(0).GetChild(0).GetComponent<Image>().sprite = whichType;
         taskPT.GetChild(0).GetChild(1).GetComponent<Text>().text = taskString + taskCounter;
     }
 
