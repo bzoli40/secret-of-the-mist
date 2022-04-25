@@ -170,6 +170,10 @@ public class UI_System : MonoBehaviour
 
         Sprite whichType = taskIcons.Find(x => x.name == "task_type_icons_" + currentT.taskType.ToString().ToLower());
 
+        // Ha kell tracker
+        GetComponent<TrackerManager>().ResetTrackers();
+        if (currentT.taskType == TaskType.GO_TO) GetComponent<TrackerManager>().NewTracker(currentT.location);
+
         if (whichType != null) taskPT.GetChild(0).GetChild(0).GetComponent<Image>().sprite = whichType;
         taskPT.GetChild(0).GetChild(1).GetComponent<Text>().text = taskString + taskCounter;
     }

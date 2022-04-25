@@ -430,7 +430,7 @@ MonoBehaviour:
   status: 0
   progress: 2
   tasks:
-  - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
+  - {fileID: 11400000, guid: 7933d56b17a95ae4184c498190265066, type: 2}
   preQuests:
   - {fileID: -2095786061493195144}
   nextQuests: []

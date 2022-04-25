@@ -49,6 +49,13 @@ public class TaskEditor : Editor
                 obj.quantity = EditorGUILayout.IntField(obj.quantity);
                 EditorGUILayout.EndHorizontal();
                 break;
+
+            case TaskType.GO_TO:
+                EditorGUILayout.BeginHorizontal();
+                GUILayout.Label("Location", GUILayout.Width(70));
+                obj.location = EditorGUILayout.Vector3Field("", obj.location);
+                EditorGUILayout.EndHorizontal();
+                break;
         }
 
         EditorGUILayout.EndVertical();
