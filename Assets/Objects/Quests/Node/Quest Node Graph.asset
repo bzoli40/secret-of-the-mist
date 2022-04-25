@@ -162,8 +162,8 @@ MonoBehaviour:
   questName: Hegyek rejtelme
   questDescrp: "Vajon mit rejtenek ez a k\xFCl\xF6n\xF6s hely?\nItt az id\u0151 felfedezni"
   startOption: 0
-  status: 2
-  progress: 1
+  status: 1
+  progress: 0
   tasks:
   - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
   preQuests: []
@@ -237,7 +237,7 @@ MonoBehaviour:
     ameddig lehet"
   startOption: 0
   status: 0
-  progress: 0
+  progress: 2
   tasks:
   - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
   - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
@@ -428,9 +428,8 @@ MonoBehaviour:
   questDescrp: "Van valahol itt egy rom. Meg k\xE9ne n\xE9zni"
   startOption: 0
   status: 0
-  progress: 0
+  progress: 2
   tasks:
-  - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
   - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
   preQuests:
   - {fileID: -2095786061493195144}

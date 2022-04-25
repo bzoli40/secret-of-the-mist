@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class UI_System : MonoBehaviour
@@ -109,8 +110,7 @@ public class UI_System : MonoBehaviour
             {
                 currentlySeeAbleQuests.Add(c_quests[x].questCode);
 
-                GameObject barObj = Instantiate(questListIconPref, questListPT);
-                questTopIconsObjs.Add(barObj);
+                AddNewQuestIcon();
             }
         }
         else
@@ -121,8 +121,7 @@ public class UI_System : MonoBehaviour
                     currentlyShownQuest = quest.questCode;
                     currentlySeeAbleQuests.Add(quest.questCode);
 
-                    GameObject barObj = Instantiate(questListIconPref, questListPT);
-                    questTopIconsObjs.Add(barObj);
+                    AddNewQuestIcon();
                     break;
 
                 case "remove":
@@ -133,8 +132,11 @@ public class UI_System : MonoBehaviour
                         currentlySeeAbleQuests.RemoveAt(where);
                         //Debug.Log(questTopIconsObjs.Count);
 
-                        Destroy(questTopIconsObjs[where]);
+                        questTopIconsObjs[where].GetComponent<Animator>().Play("destroyIcon_Quest");
+                        StartCoroutine(DeleteObj(2/6f, questTopIconsObjs[where]));
+                        //Destroy(questTopIconsObjs[where]);
                         questTopIconsObjs.RemoveAt(where);
+
 
                         //Debug.Log(questTopIconsObjs.Count);
 
@@ -172,6 +174,53 @@ public class UI_System : MonoBehaviour
         taskPT.GetChild(0).GetChild(1).GetComponent<Text>().text = taskString + taskCounter;
     }
 
+    public void AddNewQuestIcon()
+    {
+        DarkenAllQuestIcon();
+
+        GameObject barObj = Instantiate(questListIconPref, questListPT);
+        questTopIconsObjs.Add(barObj);
+    }
+
+    public void DarkenAllQuestIcon(int except = -1)
+    {
+        if (questTopIconsObjs.Count != 0)
+        {
+            for (int x = 0; x < questTopIconsObjs.Count; x++)
+            {
+                if(x != except)
+                {
+                    questTopIconsObjs[x].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                    questTopIconsObjs[x].GetComponent<Animator>().Play("switchIcon_Quest_from");
+                }
+                else
+                {
+                    questTopIconsObjs[x].GetComponent<Image>().color = new Color(1f, 0.8f, 0.29f);
+                    questTopIconsObjs[x].GetComponent<Animator>().Play("switchIcon_Quest_to");
+                }
+            }
+        }
+    }
+
+    //
+    // Switch
+    //
+
+    public void OnQuest(InputValue value)
+    {
+        if (currentlySeeAbleQuests.Count < 2) return;
+
+        int currentQuestIndex = findQuest(currentlyShownQuest);
+        int next = currentQuestIndex + 1;
+        if (next >= currentlySeeAbleQuests.Count) next = 0;
+
+        currentlyShownQuest = GetComponent<QuestManager>().findQuest(currentlySeeAbleQuests[next]).questCode;
+
+        DarkenAllQuestIcon(next);
+
+        UpdateQuestTaskUI();
+    }
+
     //
     // Search
     //
@@ -189,4 +238,10 @@ public class UI_System : MonoBehaviour
     }
 
     #endregion
+
+    IEnumerator DeleteObj (float delay, GameObject obj)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(obj);
+    }
 }

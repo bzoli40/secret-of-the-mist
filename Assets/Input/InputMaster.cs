@@ -116,6 +116,15 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Quest"",
+                    ""type"": ""Button"",
+                    ""id"": ""4151808f-8c1a-4c6b-a7b6-00eda02105af"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -393,6 +402,17 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""action"": ""Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbd31a31-45d6-40cc-9b58-9cd035093db1"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + Mouse"",
+                    ""action"": ""Quest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -439,6 +459,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         m_Player_DevConsole = m_Player.FindAction("DevConsole", throwIfNotFound: true);
         m_Player_Enter = m_Player.FindAction("Enter", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
+        m_Player_Quest = m_Player.FindAction("Quest", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -508,6 +529,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_DevConsole;
     private readonly InputAction m_Player_Enter;
     private readonly InputAction m_Player_Inventory;
+    private readonly InputAction m_Player_Quest;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -522,6 +544,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         public InputAction @DevConsole => m_Wrapper.m_Player_DevConsole;
         public InputAction @Enter => m_Wrapper.m_Player_Enter;
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
+        public InputAction @Quest => m_Wrapper.m_Player_Quest;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -561,6 +584,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Inventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
                 @Inventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
                 @Inventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
+                @Quest.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuest;
+                @Quest.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuest;
+                @Quest.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuest;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -595,6 +621,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
+                @Quest.started += instance.OnQuest;
+                @Quest.performed += instance.OnQuest;
+                @Quest.canceled += instance.OnQuest;
             }
         }
     }
@@ -629,5 +658,6 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         void OnDevConsole(InputAction.CallbackContext context);
         void OnEnter(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+        void OnQuest(InputAction.CallbackContext context);
     }
 }

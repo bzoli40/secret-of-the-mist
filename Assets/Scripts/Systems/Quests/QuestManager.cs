@@ -91,7 +91,7 @@ public class QuestManager : MonoBehaviour
 
         for(int x = 0; x < quests.Count; x++)
         {
-            Debug.Log(quests[x].status);
+            //Debug.Log(quests[x].status);
             if (quests[x].status == QuestStatus.NOT_STARTED)
             {
 
@@ -121,11 +121,11 @@ public class QuestManager : MonoBehaviour
         _newQuest.status = QuestStatus.STARTED;
         currentQuests.Add(_newQuest);
         
-
         for(int x = 0; x < _newQuest.tasks.Length; x++)
         {
             _newQuest.tasks[x].counter = 0;
         }
+
         _newQuest.progress = 0;
 
         string[] arguments = new string[] { _newQuest.questName, _newQuest.questCode };
