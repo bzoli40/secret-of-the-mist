@@ -18,4 +18,5 @@ public class TaskObject : ScriptableObject
 
     //Go-to
     public Vector3 location;
+    public float completeRange;
 }

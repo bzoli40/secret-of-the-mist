@@ -55,6 +55,10 @@ public class TaskEditor : Editor
                 GUILayout.Label("Location", GUILayout.Width(70));
                 obj.location = EditorGUILayout.Vector3Field("", obj.location);
                 EditorGUILayout.EndHorizontal();
+                EditorGUILayout.BeginHorizontal();
+                GUILayout.Label("Activation Range", GUILayout.Width(70));
+                obj.completeRange = EditorGUILayout.FloatField(obj.completeRange);
+                EditorGUILayout.EndHorizontal();
                 break;
         }
 

@@ -58,7 +58,7 @@ MonoBehaviour:
   questDescrp: "Nyilv\xE1n elvitt\xE9k a kulcsot. B\xE1rki is volt nem fog sok\xE1ig
     \xE9lni"
   startOption: 0
-  status: 0
+  status: 1
   progress: 0
   tasks:
   - {fileID: 0}
@@ -162,8 +162,8 @@ MonoBehaviour:
   questName: Hegyek rejtelme
   questDescrp: "Vajon mit rejtenek ez a k\xFCl\xF6n\xF6s hely?\nItt az id\u0151 felfedezni"
   startOption: 0
-  status: 1
-  progress: 0
+  status: 2
+  progress: 1
   tasks:
   - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
   preQuests: []
@@ -236,8 +236,8 @@ MonoBehaviour:
   questDescrp: "B\xE1rmi t\xF6rt\xE9nhet az \xFAt alatt, ez\xE9rt fel kell szerelkezni,
     ameddig lehet"
   startOption: 0
-  status: 0
-  progress: 2
+  status: 1
+  progress: 0
   tasks:
   - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
   - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
@@ -427,8 +427,8 @@ MonoBehaviour:
   questName: "Elveszett tud\xE1s - 1"
   questDescrp: "Van valahol itt egy rom. Meg k\xE9ne n\xE9zni"
   startOption: 0
-  status: 0
-  progress: 2
+  status: 2
+  progress: 1
   tasks:
   - {fileID: 11400000, guid: 7933d56b17a95ae4184c498190265066, type: 2}
   preQuests:

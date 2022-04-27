@@ -46,7 +46,7 @@ public class EventHandler : MonoBehaviour
 
     public void NewEvent(EventCategory _event, string[] _arguments, object _arg_bonus = null)
     {
-        EventObject newEvent = new EventObject(_event, _arguments, inGameTime, _arg_bonus);
+        EventObject newEvent = new (_event, _arguments, inGameTime, _arg_bonus);
 
         eventsStored.Add(newEvent);
         onEventRecieved(newEvent);

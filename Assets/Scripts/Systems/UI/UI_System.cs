@@ -143,6 +143,7 @@ public class UI_System : MonoBehaviour
                         if (currentlySeeAbleQuests.Count > 0)
                         {
                             currentlyShownQuest = currentlySeeAbleQuests[0];
+                            DarkenAllQuestIcon(0);
                         }
                     }
 
@@ -158,12 +159,15 @@ public class UI_System : MonoBehaviour
     {
         QuestNode current = GetComponent<QuestManager>().findQuest(currentlyShownQuest);
 
+        if (current == null) return;
         if (current.progress >= current.tasks.Length) return;
 
         menu_lib.questBar.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = current.questName;
         menu_lib.questBar.transform.GetChild(2).GetChild(2).GetComponent<Text>().text = current.questDescrp;
 
         TaskObject currentT = current.tasks[current.progress];
+
+        if (currentT.taskType == TaskType.GO_TO) GetComponent<QuestManager>().SpawnGoToInteraction(current, current.progress);
 
         string taskString = currentT.taskDescr;
         string taskCounter = currentT.quantity > 1 ? " (" + currentT.counter + "/" + currentT.quantity + ")" : "";

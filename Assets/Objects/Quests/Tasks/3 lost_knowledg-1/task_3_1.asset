@@ -19,3 +19,4 @@ MonoBehaviour:
   quantity: 1
   item: {fileID: 0}
   location: {x: 10, y: 119.5, z: 13}
+  completeRange: 3

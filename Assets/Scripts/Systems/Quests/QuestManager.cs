@@ -8,6 +8,9 @@ public class QuestManager : MonoBehaviour
     [Header("Import Options")][SerializeField]
     private QuestNodeGraph questCollection;
 
+    [Header("World Elements")]
+    public Transform gotoQuestPT;
+
     private List<QuestNode> quests;
 
     public List<QuestNode> currentQuests { get; private set; }
@@ -44,11 +47,21 @@ public class QuestManager : MonoBehaviour
 
             TaskObject currentTask = c_quest.tasks[c_quest.progress];
 
+            //Érzékelés
             if (currentTask.taskType.ToString() == _eventObj.type.ToString())
             {
-                c_quest.tasks[c_quest.progress].counter++;
-                Debug.Log("Emelés - A");
-                GetComponent<UI_System>().UpdateQuestTaskUI();
+                if (currentTask.taskType == TaskType.COLLECT && currentTask.item.GetCodingName() == _eventObj.args[1])
+                {
+                    c_quest.tasks[c_quest.progress].counter++;
+                    Debug.Log("Emelés - A");
+                    GetComponent<UI_System>().UpdateQuestTaskUI();
+                }
+                else if (currentTask.taskType == TaskType.GO_TO && _eventObj.args[1] == c_quest.questCode && _eventObj.args[0] == currentTask.location.ToString())
+                {
+                    c_quest.tasks[c_quest.progress].counter++;
+                    Debug.Log("Emelés - A");
+                    GetComponent<UI_System>().UpdateQuestTaskUI();
+                }
             }
         }
 
@@ -133,6 +146,7 @@ public class QuestManager : MonoBehaviour
         EventHandler.instance.NewEvent(EventCategory.QUEST, arguments, QuestStatus.STARTED);
 
         yield return new WaitForSeconds(3);
+
         GetComponent<UI_System>().UpdateQuestListUI("add", _newQuest);
 
         questStateChangeNow = false;
@@ -232,5 +246,22 @@ public class QuestManager : MonoBehaviour
         }
 
         return res;
+    }
+
+    //
+    //
+    //
+
+    public void SpawnGoToInteraction(QuestNode _quest, int _progress)
+    {
+        GameObject gtInteract = new("GoToInteractor - " + _quest.questCode, typeof(GoToInteraction));
+
+        GoToInteraction gt = gtInteract.GetComponent<GoToInteraction>();
+        TaskObject to = _quest.tasks[_progress];
+
+        gtInteract.transform.parent = gotoQuestPT;
+        gtInteract.transform.position = to.location;
+
+        gt.SetGoTo(to.completeRange, to.location, _quest.questCode);
     }
 }
