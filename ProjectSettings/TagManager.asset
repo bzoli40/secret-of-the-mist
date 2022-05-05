@@ -9,6 +9,7 @@ TagManager:
   - GameSystem
   - GrassLayer
   - MainAudio
+  - Island
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Grass
   - Water
   - UI
-  - 
+  - Stone
   - 
   - 
   - 

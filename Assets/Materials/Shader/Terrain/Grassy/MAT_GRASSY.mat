@@ -15,7 +15,7 @@ MonoBehaviour:
   version: 5
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -23,7 +23,8 @@ Material:
   m_Name: MAT_GRASSY
   m_Shader: {fileID: -6465566751694194690, guid: 0e41fa94471e1a444beb0e050801849c,
     type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -127,12 +128,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
-    - _BorderColor: {r: 0.5798006, g: 0.8301887, b: 0.28586686, a: 1}
+    - _BorderColor: {r: 0.48694444, g: 0.5943396, b: 0.36165005, a: 1}
     - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
-    - _ColorDarker: {r: 0.51998043, g: 0.7924528, b: 0.20558919, a: 0}
-    - _ColorLighter: {r: 0.5552095, g: 0.8962264, b: 0.38470095, a: 0}
+    - _ColorDarker: {r: 0.27097678, g: 0.6132076, b: 0.18801177, a: 1}
+    - _ColorLighter: {r: 0.28702396, g: 0.7075472, b: 0.21693665, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PebbleColor: {r: 0.5566038, g: 0.47236934, b: 0.39119795, a: 1}
+    - _PebbleColor: {r: 0.39155042, g: 0.5283019, b: 0.17194732, a: 1}
     - _SmoothnessMinMax: {r: 0.2, g: 0.5, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
