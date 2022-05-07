@@ -47,6 +47,7 @@ public class InputSystemValues : MonoBehaviour
 	{
 		if (p.playerState != PlayerState.DOANYTHING) return;
 
+		//Debug.Log("Ugrik");
 		jump = value.isPressed;
 	}
 

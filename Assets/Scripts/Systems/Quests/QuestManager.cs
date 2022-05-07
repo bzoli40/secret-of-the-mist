@@ -110,14 +110,14 @@ public class QuestManager : MonoBehaviour
 
                 if (quests[x].preQuests.Length == 0)
                 {
-                    Debug.Log("Found!");
+                    //Debug.Log("Found!");
 
                     yield return new WaitUntil(() => !questStateChangeNow);
                     StartCoroutine(InitNewQuest(quests[x]));
                 }
                 else if (presCompleted(quests[x]))
                 {
-                    Debug.Log("Found!");
+                    //Debug.Log("Found!");
 
                     yield return new WaitUntil(() => !questStateChangeNow);
                     StartCoroutine(InitNewQuest(quests[x]));

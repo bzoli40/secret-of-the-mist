@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10,7 +10,8 @@ Material:
   m_Name: Stone_001_edge
   m_Shader: {fileID: -6465566751694194690, guid: f9691c3ecf38e9e42952849edbd8667b,
     type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -95,11 +96,12 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0.226
     - _OcclusionStrength: 1
+    - _OutLineSize: 0
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0
+    - _Smoothness: 0.3
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -108,8 +110,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-    - _Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+    - _Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
     - _EmissionColor: {r: 4, g: 4, b: 4, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6584994434516197976

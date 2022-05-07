@@ -59,7 +59,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    keepQuads: 1
+    keepQuads: 0
     weldVertices: 1
     bakeAxisConversion: 0
     preserveHierarchy: 0
@@ -78,7 +78,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 30
+    normalSmoothAngle: 40
     normalImportMode: 1
     tangentImportMode: 2
     normalCalculationMode: 4
