@@ -26,8 +26,6 @@ public class EventHandler : MonoBehaviour
     List<EventObject> eventsStored;
     public event Action<EventObject> onEventRecieved;
 
-    public float inGameTime = 0;
-
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -39,14 +37,10 @@ public class EventHandler : MonoBehaviour
         onEventRecieved += OnEventReceived;
     }
 
-    private void FixedUpdate()
-    {
-        inGameTime += Time.fixedDeltaTime;
-    }
-
     public void NewEvent(EventCategory _event, string[] _arguments, object _arg_bonus = null)
     {
-        EventObject newEvent = new (_event, _arguments, inGameTime, _arg_bonus);
+        float time = GameManager.main.inGameTime; 
+        EventObject newEvent = new (_event, _arguments, time, _arg_bonus);
 
         eventsStored.Add(newEvent);
         onEventRecieved(newEvent);

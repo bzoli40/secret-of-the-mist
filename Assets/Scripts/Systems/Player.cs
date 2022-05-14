@@ -5,7 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //Alapértékek
-    private int health, maxHealth;
+    public int health { get; private set; }
+    public int maxHealth { get; private set; }
+
+
     private int experience, level;
 
     private List<StatusEffect> current_effects;
@@ -15,6 +18,8 @@ public class Player : MonoBehaviour
     //Basic
     private void Start()
     {
+        health = maxHealth = 100;
+
         playerState = PlayerState.DOANYTHING;
     }
 

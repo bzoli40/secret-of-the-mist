@@ -20,16 +20,15 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        quests = new List<QuestNode>();
-        currentQuests = new List<QuestNode>();
-        completedQuests = new List<QuestNode>();
+        //ImportQuests();
 
-        GetComponent<EventHandler>().onEventRecieved += OnEventHappened;
-
-        ImportQuests();
+        //GameManager.main.whenGameLoadCompleted += OnLoadFinished;
 
         //Start New Quests
-        StartCoroutine(CheckForStartableQuests());
+        //if (false)
+        //    StartCoroutine(CheckForStartableQuests());
+        //else
+        //    Debug.Log("Küldetéskezdés letiltva - DEBUG");
     }
 
     private void OnDestroy()
@@ -68,8 +67,20 @@ public class QuestManager : MonoBehaviour
         StartCoroutine(CheckForQuestStateUpdates());
     }
 
-    void ImportQuests()
+    void OnLoadFinished()
     {
+        StartCoroutine(CheckForStartableQuests());
+    }
+
+    public bool ImportQuests()
+    {
+        quests = new List<QuestNode>();
+        currentQuests = new List<QuestNode>();
+        completedQuests = new List<QuestNode>();
+
+        GetComponent<EventHandler>().onEventRecieved += OnEventHappened;
+        GameManager.main.whenGameLoadCompleted += OnLoadFinished;
+
         /*List<Node> tempList = questCollection.nodes;
 
         for(int x = 0; x < tempList.Count; x++)
@@ -84,6 +95,8 @@ public class QuestManager : MonoBehaviour
             (tempList[x] as QuestNode).status = QuestStatus.NOT_STARTED;
             quests.Add(tempList[x] as QuestNode);
         }
+
+        return true;
     }
 
     IEnumerator CheckForStartableQuests()

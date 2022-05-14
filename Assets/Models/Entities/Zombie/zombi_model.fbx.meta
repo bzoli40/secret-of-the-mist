@@ -35,16 +35,11 @@ ModelImporter:
     removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file:\n\t'Hip.R' : rotation
+      error = 179.960449 deg\n"
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'zombirig|zombirig.001|zombirig|dead|zombirig|dead'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine3'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'zombirig|zombirig.001|zombirig|zombirig.001|zombirig|Idle|zombirig|zombi'
-      has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'Spine3'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0

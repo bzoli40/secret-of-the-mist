@@ -49,6 +49,30 @@ public class UI_System : MonoBehaviour
         menu_lib = transform.GetChild(0).GetComponent<MenuLibrary>();
     }
 
+    private void Update()
+    {
+        UpdateStats();
+
+        float progress = 0;
+        if ((progress = GameManager.main.loadProgress) <= 1)
+            menu_lib.loadingBar.fillAmount = progress;
+        
+    }
+
+    #region Loading
+
+    public void UpdateLoadMessage(string _message)
+    {
+        menu_lib.loadingMessage.text = _message;
+    }
+
+    public void LoadingScreenEnd()
+    {
+        menu_lib.loadingScreen.GetComponent<Animator>().SetTrigger("fadeOut");
+    }
+
+    #endregion
+
     #region Inventory
 
     public void SetInventoryMenu()
@@ -243,6 +267,21 @@ public class UI_System : MonoBehaviour
         }
 
         return res;
+    }
+
+    #endregion
+
+    #region Stats
+
+    public void UpdateStats()
+    {
+        Player player = GetComponent<Player>();
+
+        int hp = player.health;
+        int maxhp = player.maxHealth;
+        int percent = hp / maxhp;
+
+        menu_lib.healthHolder.fillAmount = percent;
     }
 
     #endregion
