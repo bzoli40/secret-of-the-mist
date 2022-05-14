@@ -2179,7 +2179,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334421386}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: f87e05473487d0c48b7fe2439164f7e4, type: 3}
   m_Controller: {fileID: 9100000, guid: dc4dd5b3a3f59aa41bcac4ff99eb59c3, type: 2}
   m_CullingMode: 0
@@ -2240,6 +2240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posUpdateDistance: 0.1
+  followRange: 10
+  ai_mode: 0
 --- !u!1 &360744417
 GameObject:
   m_ObjectHideFlags: 0

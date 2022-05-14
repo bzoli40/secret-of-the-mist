@@ -13,13 +13,16 @@ public class Player : MonoBehaviour
 
     private List<StatusEffect> current_effects;
 
-    public PlayerState playerState { get; private set; }
+    public PlayerState playerState { get; private set; } = PlayerState.NOCONTROLL;
 
     //Basic
     private void Start()
     {
         health = maxHealth = 100;
+    }
 
+    public void WhenLoadEnded()
+    {
         playerState = PlayerState.DOANYTHING;
     }
 
@@ -31,7 +34,7 @@ public class Player : MonoBehaviour
     }
 
     //Képességek
-
+    
 
     //Inventory
     private InventorySystem player_inventory;

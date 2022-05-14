@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private bool loaded = false;
     public float trueProgress { get; private set; } = 1;
 
+    public GameState gameState { get; private set; } = GameState.PAUSED;
+
     private void Awake()
     {
         if (main == null) main = this;
@@ -35,7 +37,13 @@ public class GameManager : MonoBehaviour
         {
             GetComponent<UI_System>().LoadingScreenEnd();
             GetComponent<UI_System>().UpdateLoadMessage("Betöltés sikeres!");
-            loaded = true;
+
+            //Játék bool értékek
+            {
+                loaded = true;
+                gameState = GameState.PLAY;
+                GetComponent<Player>().WhenLoadEnded();
+            }
 
             StartCoroutine(LoadFinished());
         }
