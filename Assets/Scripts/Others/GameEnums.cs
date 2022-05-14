@@ -25,3 +25,7 @@ public enum NotificationType { COLLECT, QUEST_STATE_CHANGE };
 
 //Quest enums
 public enum QuestStatus { NOT_STARTED, STARTED, FINISHED, STOPPED };
+
+
+//AI enums
+public enum AIMode { STANDBY, FOLLOW, ATTACK };

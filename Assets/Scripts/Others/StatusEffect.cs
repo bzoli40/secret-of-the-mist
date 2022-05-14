@@ -21,6 +21,6 @@ public class StatusEffect : MonoBehaviour
     /// <returns></returns>
     public bool isActiveYet()
     {
-        return true;
+        return GameManager.main.inGameTime - startTime > duration;
     }
 }

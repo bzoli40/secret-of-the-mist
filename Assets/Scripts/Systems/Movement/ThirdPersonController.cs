@@ -315,7 +315,7 @@ public class ThirdPersonController : MonoBehaviour
     {
         if (_input.attack)
         {
-			Debug.Log("Jej!");
+			//Debug.Log("Jej!");
 
 			_animator.SetTrigger("attack");
 			_input.attack = false;
