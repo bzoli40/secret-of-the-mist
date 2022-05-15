@@ -11,7 +11,7 @@ public class ZombieAI : MonoBehaviour
     public float posUpdateDistance;
 
     public float attackRange;
-    public Vector3 attackRangeOffset;
+    public float attackRangeOffsetY;
     public float followRange;
 
     //public AIMode ai_mode;
@@ -35,15 +35,14 @@ public class ZombieAI : MonoBehaviour
 
             if (isAttacking)
             {
-                Debug.Log("Támad!");
+                transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
             }
             else if (isMoving)
             {
                 Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-                if (Vector3.Distance(playerPos, nav_agent.destination) >= posUpdateDistance)
-                {
-                    nav_agent.destination = playerPos;
-                }
+                nav_agent.SetDestination(playerPos);
+
+                Debug.Log(Vector3.Distance(transform.position, nav_agent.destination));
 
                 if (Vector3.Distance(transform.position, nav_agent.destination) <= posUpdateDistance)
                 {
@@ -52,7 +51,7 @@ public class ZombieAI : MonoBehaviour
             }
             else if (!isMoving)
             {
-                nav_agent.destination = transform.position;
+                nav_agent.SetDestination(transform.position);
             }
         }
     }
@@ -65,7 +64,7 @@ public class ZombieAI : MonoBehaviour
 
         foreach (Collider hitter in hitters)
         {
-            if (hitter.tag == "Player" || hitter.GetComponent<IsPlayer>() != null)
+            if (hitter.tag == "Player" || hitter.tag == "Target" || hitter.GetComponent<IsPlayer>() != null)
             {
                 isTherePlayer = true;
             }
@@ -85,13 +84,13 @@ public class ZombieAI : MonoBehaviour
 
     private void CheckForPlayerForHit()
     {
-        Collider[] hitters = Physics.OverlapSphere(transform.position + attackRangeOffset, attackRange);
+        Collider[] hitters = Physics.OverlapSphere(PlusY(transform.position, attackRangeOffsetY), attackRange);
 
         bool isTherePlayer = false;
 
         foreach (Collider hitter in hitters)
         {
-            if (hitter.tag == "Player" || hitter.GetComponent<IsPlayer>() != null)
+            if (hitter.tag == "Player" || hitter.tag == "Target" || hitter.GetComponent<IsPlayer>() != null)
             {
                 isTherePlayer = true;
             }
@@ -115,11 +114,11 @@ public class ZombieAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, followRange);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(Vector3.zero + attackRangeOffset, attackRange);
+        Gizmos.DrawWireSphere(PlusY(transform.position, attackRangeOffsetY), attackRange);
     }
 
-    public static Vector3 VectorMultiply (Vector3 A, Vector3 B)
+    public static Vector3 PlusY (Vector3 A, float B)
     {
-        return new Vector3(A.x * B.x, A.z * B.z, A.z * B.z);
+        return new Vector3(A.x, A.y + B, A.z);
     }
 }
