@@ -58,18 +58,19 @@ Material:
     - _NoiseStrength: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SimpleNoise: 2
+    - _SimpleNoise: 0
     - _Speed: 1
-    - _Step: 0.5
-    - _Step2: 0.1
+    - _Step: 0.62
+    - _Step2: 0.5
     - _Strength: 10
     - _Teszt: 0
+    - _VoronoiSpeed: 0.23
     m_Colors:
     - _BaseColor: {r: 0.16037738, g: 0, b: 0.09619774, a: 1}
     - _BaseColor2: {r: 21.361254, g: 1.0241936, b: 0, a: 1}
-    - _Center: {r: 0.5, g: 0.72, b: 0, a: 0}
+    - _Center: {r: 0.5, g: 0.8, b: 0, a: 0}
     - _EdgeColor: {r: 0, g: 3.262745, b: 23.96863, a: 1}
-    - _Offset: {r: 0.2, g: 0.1, b: 0, a: 0}
+    - _Offset: {r: 0.1, g: 0.01, b: 0, a: 0}
     - _Strength: {r: 1000, g: 1, b: 0, a: 0}
     - _Teszt2: {r: 0, g: 0, b: 0, a: 0}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
