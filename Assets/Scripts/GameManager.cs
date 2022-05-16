@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
         else if (!loaded && loadProgress >= 1)
         {
             GetComponent<UI_System>().LoadingScreenEnd();
-            GetComponent<UI_System>().UpdateLoadMessage("Betöltés sikeres!");
 
             //Játék bool értékek
             {
@@ -58,13 +57,21 @@ public class GameManager : MonoBehaviour
     private void StartLoad()
     {
         UI_System UI = GetComponent<UI_System>();
-
+        UI.ShowLoadingScreen(true);
 
         //Küldetések
-        UI.UpdateLoadMessage("Küldetések betöltése");
+        UI.AddLoadMessage(0, "Küldetések betöltése");
         if(GetComponent<QuestManager>().ImportQuests())
         {
-            trueProgress = 1;
+            trueProgress = 0.5f;
+
+            //Statok
+            UI.AddLoadMessage(0.5f, "Statisztikák beállítása");
+            if (UI.SetupStats())
+            {
+                trueProgress = 1f;
+                UI.AddLoadMessage(0.98f, "Betöltés sikeres!");
+            }
         }
     }
 }

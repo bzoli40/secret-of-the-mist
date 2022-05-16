@@ -10,7 +10,9 @@ public class MenuLibrary : MonoBehaviour
 
     //Health
     public Transform healthBar;
-    public Image healthHolder;
+
+    public GameObject hearthPref;
+    public Sprite empty_hearth, full_hearth;
 
     //Loading
     public GameObject loadingScreen;

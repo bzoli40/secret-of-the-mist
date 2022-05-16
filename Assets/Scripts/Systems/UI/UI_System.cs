@@ -4,6 +4,18 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+public class LoadingMessage
+{
+    public string message;
+    public float where;
+
+    public LoadingMessage(float _where, string _message)
+    {
+        where = _where;
+        message = _message;
+    }
+}
+
 public class UI_System : MonoBehaviour
 {
     MenuLibrary menu_lib;
@@ -34,6 +46,9 @@ public class UI_System : MonoBehaviour
     private int currentlyShownTask;
     private List<string> currentlySeeAbleQuests = new();
 
+    //Loading
+    private List<LoadingMessage> loadingMessages = new();
+
     //
     //
     //
@@ -51,19 +66,37 @@ public class UI_System : MonoBehaviour
 
     private void Update()
     {
-        UpdateStats();
-
         float progress = 0;
         if ((progress = GameManager.main.loadProgress) <= 1)
+        {
             menu_lib.loadingBar.fillAmount = progress;
-        
+            UpdateLoadMessage(progress);
+        }
+
     }
 
     #region Loading
 
-    public void UpdateLoadMessage(string _message)
+    public void AddLoadMessage(float _w, string _m)
     {
-        menu_lib.loadingMessage.text = _message;
+        loadingMessages.Add(new LoadingMessage(_w, _m));
+    }
+
+    public void UpdateLoadMessage(float _progress)
+    {
+        string msg = "";
+
+        for(int x = 0; x < loadingMessages.Count; x++)
+        {
+            if (loadingMessages[x].where <= _progress) msg = loadingMessages[x].message;
+        }
+
+        menu_lib.loadingMessage.text = msg;
+    }
+
+    public void ShowLoadingScreen(bool isTrue)
+    {
+        menu_lib.loadingScreen.SetActive(isTrue);
     }
 
     public void LoadingScreenEnd()
@@ -273,15 +306,21 @@ public class UI_System : MonoBehaviour
 
     #region Stats
 
-    public void UpdateStats()
+    public bool SetupStats()
     {
         Player player = GetComponent<Player>();
+        player.SetupBasics();
 
         int hp = player.health;
         int maxhp = player.maxHealth;
-        int percent = hp / maxhp;
 
-        menu_lib.healthHolder.fillAmount = percent;
+        for(int x = 0; x < maxhp; x++)
+        {
+            GameObject hearthObj = Instantiate(menu_lib.hearthPref, menu_lib.healthBar.transform);
+            hearthObj.GetComponent<Image>().sprite = menu_lib.full_hearth;
+        }
+
+        return true;
     }
 
     #endregion

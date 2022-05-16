@@ -6,7 +6,8 @@ public class Player : MonoBehaviour
 {
     //Alapértékek
     public int health { get; private set; }
-    public int maxHealth { get; private set; }
+    public int maxHealth { get; private set; } = 5;
+    private bool startupSetted = false;
 
 
     private int experience, level;
@@ -16,9 +17,12 @@ public class Player : MonoBehaviour
     public PlayerState playerState { get; private set; } = PlayerState.NOCONTROLL;
 
     //Basic
-    private void Start()
+    public void SetupBasics()
     {
-        health = maxHealth = 100;
+        if(!startupSetted)
+        {
+            health = maxHealth;
+        }
     }
 
     public void WhenLoadEnded()
