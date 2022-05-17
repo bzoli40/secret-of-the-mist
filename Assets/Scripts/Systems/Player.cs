@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     public int health { get; private set; }
     public int maxHealth { get; private set; } = 5;
     private bool startupSetted = false;
+    public Action OnHealthChange;
 
 
     private int experience, level;
@@ -22,7 +24,17 @@ public class Player : MonoBehaviour
         if(!startupSetted)
         {
             health = maxHealth;
+
+            startupSetted = true;
         }
+    }
+
+    public void GetHit(int amount)
+    {
+        Debug.Log("AU!");
+
+        health -= amount;
+        OnHealthChange();
     }
 
     public void WhenLoadEnded()

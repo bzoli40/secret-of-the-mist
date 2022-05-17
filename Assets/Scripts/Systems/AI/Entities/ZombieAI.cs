@@ -108,6 +108,19 @@ public class ZombieAI : MonoBehaviour
         }
     }
 
+    public void AttackPlayer()
+    {
+        Collider[] hitters = Physics.OverlapSphere(PlusY(transform.position, attackRangeOffsetY), attackRange);
+
+        Debug.Log("TryHit");
+
+        foreach (Collider hitter in hitters)
+        {
+            if (hitter.tag == "Player" || hitter.tag == "Target" || hitter.GetComponent<IsPlayer>() != null)
+                GameObject.FindGameObjectWithTag("GameSystem").GetComponent<Player>().GetHit(1);
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

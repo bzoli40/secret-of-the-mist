@@ -1,18 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AbilitySystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnHitPush(InputValue value)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log(value.Get<Vector2>());
     }
 }

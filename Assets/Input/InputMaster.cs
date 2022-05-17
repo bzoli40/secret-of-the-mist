@@ -125,6 +125,15 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HitPush"",
+                    ""type"": ""Value"",
+                    ""id"": ""81e6d768-d8da-443a-9e5c-638dc9c4f538"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -176,61 +185,6 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""name"": ""right"",
                     ""id"": ""ffe8122f-f7d8-44ec-8ea7-899db502bac5"",
                     ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Arrows"",
-                    ""id"": ""510dfdfa-e5c7-4c7a-931d-03450e640eb7"",
-                    ""path"": ""2DVector(mode=1)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""2545f9c1-78f9-4ec4-a40b-54a52fec36f6"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""0c7a1f97-3f7f-4463-ab6c-d8b56c6ccc3b"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""4e188038-7ddd-46d7-b484-1fb4e6453360"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard + Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""495e6813-b7b5-4068-bd93-a3725bbd11cb"",
-                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard + Mouse"",
@@ -413,6 +367,61 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""action"": ""Quest"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""510dfdfa-e5c7-4c7a-931d-03450e640eb7"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HitPush"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""2545f9c1-78f9-4ec4-a40b-54a52fec36f6"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + Mouse"",
+                    ""action"": ""HitPush"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""0c7a1f97-3f7f-4463-ab6c-d8b56c6ccc3b"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + Mouse"",
+                    ""action"": ""HitPush"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""4e188038-7ddd-46d7-b484-1fb4e6453360"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + Mouse"",
+                    ""action"": ""HitPush"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""495e6813-b7b5-4068-bd93-a3725bbd11cb"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard + Mouse"",
+                    ""action"": ""HitPush"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -460,6 +469,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         m_Player_Enter = m_Player.FindAction("Enter", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         m_Player_Quest = m_Player.FindAction("Quest", throwIfNotFound: true);
+        m_Player_HitPush = m_Player.FindAction("HitPush", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -530,6 +540,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Enter;
     private readonly InputAction m_Player_Inventory;
     private readonly InputAction m_Player_Quest;
+    private readonly InputAction m_Player_HitPush;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -545,6 +556,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         public InputAction @Enter => m_Wrapper.m_Player_Enter;
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputAction @Quest => m_Wrapper.m_Player_Quest;
+        public InputAction @HitPush => m_Wrapper.m_Player_HitPush;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -587,6 +599,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Quest.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuest;
                 @Quest.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuest;
                 @Quest.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnQuest;
+                @HitPush.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHitPush;
+                @HitPush.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHitPush;
+                @HitPush.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHitPush;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -624,6 +639,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Quest.started += instance.OnQuest;
                 @Quest.performed += instance.OnQuest;
                 @Quest.canceled += instance.OnQuest;
+                @HitPush.started += instance.OnHitPush;
+                @HitPush.performed += instance.OnHitPush;
+                @HitPush.canceled += instance.OnHitPush;
             }
         }
     }
@@ -659,5 +677,6 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         void OnEnter(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnQuest(InputAction.CallbackContext context);
+        void OnHitPush(InputAction.CallbackContext context);
     }
 }

@@ -75,6 +75,12 @@ public class UI_System : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        Player player = GetComponent<Player>();
+        player.OnHealthChange -= UpdateStats;
+    }
+
     #region Loading
 
     public void AddLoadMessage(float _w, string _m)
@@ -310,17 +316,41 @@ public class UI_System : MonoBehaviour
     {
         Player player = GetComponent<Player>();
         player.SetupBasics();
+        player.OnHealthChange += UpdateStats;
 
-        int hp = player.health;
-        int maxhp = player.maxHealth;
-
-        for(int x = 0; x < maxhp; x++)
-        {
-            GameObject hearthObj = Instantiate(menu_lib.hearthPref, menu_lib.healthBar.transform);
-            hearthObj.GetComponent<Image>().sprite = menu_lib.full_hearth;
-        }
+        UpdateStats();
 
         return true;
+    }
+
+    public void UpdateStats()
+    {
+        Player player = GetComponent<Player>();
+
+        int childCount = menu_lib.healthBar.childCount;
+        int difference = childCount - player.maxHealth;
+
+        if (difference != 0)
+        {
+            for (int x = 0; x < Mathf.Abs(difference); x++)
+            {
+                if (difference > 0)
+                {
+                    Destroy(menu_lib.healthBar.GetChild(childCount - 1 - x));
+                }
+                else
+                {
+                    GameObject hearthObj = Instantiate(menu_lib.hearthPref, menu_lib.healthBar.transform);
+                    hearthObj.GetComponent<Image>().sprite = menu_lib.full_hearth;
+                }
+            }
+        }
+
+        for (int y = 0; y < player.maxHealth; y++)
+        {
+            if (y < player.health) menu_lib.healthBar.GetChild(y).GetComponent<Image>().sprite = menu_lib.full_hearth;
+            else menu_lib.healthBar.GetChild(y).GetComponent<Image>().sprite = menu_lib.empty_hearth;
+        }
     }
 
     #endregion
