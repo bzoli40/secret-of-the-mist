@@ -47,8 +47,8 @@ public class InputSystemValues : MonoBehaviour
 	{
 		if (p.playerState != PlayerState.DOANYTHING) return;
 
-		//Debug.Log("Ugrik");
-		jump = value.isPressed;
+		//Debug.Log("Ugrik"); 
+		//jump = value.isPressed; Átmenetileg kivonva!
 	}
 
 	public void OnSprint(InputValue value)
@@ -62,7 +62,7 @@ public class InputSystemValues : MonoBehaviour
 	{
 		if (p.playerState != PlayerState.DOANYTHING) return;
 
-		attack = value.isPressed;
+		//attack = value.isPressed; Átmenetileg kivonva!
 	}
 
 	public void OnInteract(InputValue value)

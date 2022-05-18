@@ -18,4 +18,7 @@ public class MenuLibrary : MonoBehaviour
     public GameObject loadingScreen;
     public Text loadingMessage;
     public Image loadingBar;
+
+    //Dead
+    public GameObject deadScreen;
 }

@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ZombieAI : MonoBehaviour
 {
     private NavMeshAgent nav_agent;
+
+    [Header("Entity beállítások")]
+    public string entityName;
 
     [Header("AI beállítások")]
     public float posUpdateDistance;
@@ -19,9 +23,25 @@ public class ZombieAI : MonoBehaviour
     public bool isAttacking = false;
     public bool isMoving = false;
 
+    public int hitPointCount = 3;
+    private List<int> hitPoints = new();
+
+    private Transform stats;
+
+    private void Start()
+    {
+        for(int x = 0; x < hitPointCount; x++)
+            hitPoints.Add(Random.Range(0, 4));
+
+        stats.GetChild(0).GetChild(0).GetComponent<Text>().text = entityName;
+        stats.GetChild(0).gameObject.SetActive(false);
+
+    }
+
     private void Awake()
     {
         nav_agent = GetComponent<NavMeshAgent>();
+        stats = transform.GetChild(2);
     }
 
     private void Update()
@@ -53,6 +73,8 @@ public class ZombieAI : MonoBehaviour
             {
                 nav_agent.SetDestination(transform.position);
             }
+
+            stats.GetChild(0).gameObject.SetActive(isAttacking || isMoving);
         }
     }
 

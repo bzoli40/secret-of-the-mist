@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int maxHealth { get; private set; } = 5;
     private bool startupSetted = false;
     public Action OnHealthChange;
+    public bool dead = false;
 
 
     private int experience, level;
@@ -31,10 +32,24 @@ public class Player : MonoBehaviour
 
     public void GetHit(int amount)
     {
+        if (dead) return;
+
         Debug.Log("AU!");
 
         health -= amount;
         OnHealthChange();
+
+        if (health <= 0 && !dead)
+        {
+            Dying();
+            dead = true;
+        }
+    }
+
+    public void Dying()
+    {
+        playerState = PlayerState.NOCONTROLL;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("dying");
     }
 
     public void WhenLoadEnded()

@@ -110,6 +110,11 @@ public class UI_System : MonoBehaviour
         menu_lib.loadingScreen.GetComponent<Animator>().SetTrigger("fadeOut");
     }
 
+    public void StartDeadScreen()
+    {
+        menu_lib.deadScreen.GetComponent<Animation>().Play();
+    }
+
     #endregion
 
     #region Inventory
