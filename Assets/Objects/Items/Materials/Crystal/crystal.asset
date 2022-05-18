@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   category: 0
   icon: {fileID: 21300000, guid: 919efde595c33554d9ca7848366f8576, type: 3}
-  codingName: crystal
-  displayName: Crystal
+  codingName: krisztalit
+  displayName: Krisztalit
   description: Just a crystal :D
   rarity: 1

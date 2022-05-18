@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: task_1_1
   m_EditorClassIdentifier: 
   taskType: 1
-  taskDescr: "Gy\u0171jts \xF6ssze krist\xE1lyokat a f\u0151zethez"
+  taskDescr: "Gy\u0171jts \xF6ssze krist\xE1lyokat"
   completed: 0
-  counter: 2
-  quantity: 2
+  counter: 0
+  quantity: 5
   item: {fileID: 11400000, guid: 505dabaa42b824a489d426b9079c60d3, type: 2}
   location: {x: 0, y: 0, z: 0}
+  completeRange: 0

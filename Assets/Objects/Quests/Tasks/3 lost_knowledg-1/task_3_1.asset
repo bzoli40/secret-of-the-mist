@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: task_3_1
   m_EditorClassIdentifier: 
   taskType: 2
-  taskDescr: "Tal\xE1ld meg a romot \xE9s annak bej\xE1rat\xE1t"
+  taskDescr: "Tal\xE1ld meg a halott f\xE1t"
   completed: 0
   counter: 0
   quantity: 1
   item: {fileID: 0}
-  location: {x: 10, y: 119.5, z: 13}
+  location: {x: 81, y: 119.8, z: 9.5}
   completeRange: 3

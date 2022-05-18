@@ -62,7 +62,7 @@ public class ZombieAI : MonoBehaviour
                 Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
                 nav_agent.SetDestination(playerPos);
 
-                Debug.Log(Vector3.Distance(transform.position, nav_agent.destination));
+                //Debug.Log(Vector3.Distance(transform.position, nav_agent.destination));
 
                 if (Vector3.Distance(transform.position, nav_agent.destination) <= posUpdateDistance)
                 {

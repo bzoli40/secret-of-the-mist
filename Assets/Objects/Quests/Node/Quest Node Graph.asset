@@ -1,70 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5694948405324156368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
-  m_Name: "Sz\xFAr\xF3 rabl\xF3k"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 712, y: 440}
-  ports:
-    keys:
-    - preQuests
-    - nextQuests
-    - tasks 0
-    values:
-    - _fieldName: preQuests
-      _node: {fileID: -5694948405324156368}
-      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: nextQuests
-        node: {fileID: 3976953753869813228}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: nextQuests
-      _node: {fileID: -5694948405324156368}
-      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: preQuests
-        node: {fileID: 3305896484095546485}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: tasks 0
-      _node: {fileID: -5694948405324156368}
-      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
-  questCode: stabing_thieves
-  questName: "Sz\xFAr\xF3 rabl\xF3k"
-  questDescrp: "Nyilv\xE1n elvitt\xE9k a kulcsot. B\xE1rki is volt nem fog sok\xE1ig
-    \xE9lni"
-  startOption: 0
-  status: 1
-  progress: 0
-  tasks:
-  - {fileID: 0}
-  preQuests:
-  - {fileID: 3976953753869813228}
-  nextQuests: []
 --- !u!114 &-2095786061493195144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
-  m_Name: Hegyek rejtelme
+  m_Name: "Krist\xE1lygy\u0171jt\u0151"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -408, y: -8}
+  position: {x: -328, y: -24}
   ports:
     keys:
     - preQuests
@@ -104,10 +39,10 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: preQuests
-        node: {fileID: -1149993863299080669}
+        node: {fileID: 3976953753869813228}
         reroutePoints: []
       - fieldName: preQuests
-        node: {fileID: 3976953753869813228}
+        node: {fileID: -1149993863299080669}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -158,9 +93,9 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 1
-  questCode: mount_mist
-  questName: Hegyek rejtelme
-  questDescrp: "Vajon mit rejtenek ez a k\xFCl\xF6n\xF6s hely?\nItt az id\u0151 felfedezni"
+  questCode: crystals
+  questName: "Krist\xE1lygy\u0171jt\u0151"
+  questDescrp: "Egyik lehet\u0151s\xE9g... gy\u0171jteni cuccokat"
   startOption: 0
   status: 2
   progress: 1
@@ -178,10 +113,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
-  m_Name: "Amit a term\xE9szet adhat"
+  m_Name: "Helymeghat\xE1roz\xE1s - 2"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 456, y: -264}
+  position: {x: 168, y: 216}
   ports:
     keys:
     - preQuests
@@ -205,10 +140,7 @@ MonoBehaviour:
       _node: {fileID: -1149993863299080669}
       _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections:
-      - fieldName: preQuests
-        node: {fileID: 3305896484095546485}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -232,15 +164,13 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   questCode: what_nature_can_give
-  questName: "Amit a term\xE9szet adhat"
-  questDescrp: "B\xE1rmi t\xF6rt\xE9nhet az \xFAt alatt, ez\xE9rt fel kell szerelkezni,
-    ameddig lehet"
+  questName: "Helymeghat\xE1roz\xE1s - 2"
+  questDescrp: "V\xE1\xF3\xF3\xF3\xF3"
   startOption: 0
   status: 1
   progress: 0
   tasks:
-  - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
-  - {fileID: 11400000, guid: 0494ccad2d6a7144fa127bceb37e6904, type: 2}
+  - {fileID: 11400000, guid: 54eb9cfd180340046967eb4b51b5bae7, type: 2}
   preQuests:
   - {fileID: -2095786061493195144}
   nextQuests: []
@@ -260,106 +190,6 @@ MonoBehaviour:
   - {fileID: -2095786061493195144}
   - {fileID: -1149993863299080669}
   - {fileID: 3976953753869813228}
-  - {fileID: -5694948405324156368}
-  - {fileID: 3305896484095546485}
---- !u!114 &3305896484095546485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
-  m_Name: "Elveszett tud\xE1s - 2"
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1224, y: -8}
-  ports:
-    keys:
-    - preQuests
-    - nextQuests
-    - tasks 0
-    - tasks 1
-    - tasks 2
-    - tasks 3
-    values:
-    - _fieldName: preQuests
-      _node: {fileID: 3305896484095546485}
-      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: nextQuests
-        node: {fileID: -1149993863299080669}
-        reroutePoints: []
-      - fieldName: nextQuests
-        node: {fileID: -5694948405324156368}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: nextQuests
-      _node: {fileID: 3305896484095546485}
-      _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: tasks 0
-      _node: {fileID: 3305896484095546485}
-      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
-    - _fieldName: tasks 1
-      _node: {fileID: 3305896484095546485}
-      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
-    - _fieldName: tasks 2
-      _node: {fileID: 3305896484095546485}
-      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
-    - _fieldName: tasks 3
-      _node: {fileID: 3305896484095546485}
-      _typeQualifiedName: TaskNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 1
-  questCode: lost_knowledge-2
-  questName: "Elveszett tud\xE1s - 2"
-  questDescrp: "Megvan a kulcs, m\xE1rcsak a felder\xEDt\xE9s maradt"
-  startOption: 0
-  status: 0
-  progress: 0
-  tasks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  preQuests:
-  - {fileID: -1149993863299080669}
-  - {fileID: -5694948405324156368}
-  nextQuests: []
 --- !u!114 &3976953753869813228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,10 +200,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d4060cbe3a43b0469eaa7f90444739a, type: 3}
-  m_Name: "Elveszett tud\xE1s - 1"
+  m_Name: "Helymeghat\xE1roz\xE1s - 1"
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 248, y: 424}
+  position: {x: 168, y: -200}
   ports:
     keys:
     - preQuests
@@ -397,10 +227,7 @@ MonoBehaviour:
       _node: {fileID: 3976953753869813228}
       _typeQualifiedName: QuestNode[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections:
-      - fieldName: preQuests
-        node: {fileID: -5694948405324156368}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -424,8 +251,8 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   questCode: lost_knowledge-1
-  questName: "Elveszett tud\xE1s - 1"
-  questDescrp: "Van valahol itt egy rom. Meg k\xE9ne n\xE9zni"
+  questName: "Helymeghat\xE1roz\xE1s - 1"
+  questDescrp: "L\xE1tod, ilyen is van"
   startOption: 0
   status: 2
   progress: 1

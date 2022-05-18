@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -50,6 +51,15 @@ public class Player : MonoBehaviour
     {
         playerState = PlayerState.NOCONTROLL;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("dying");
+        GetComponent<UI_System>().StartDeadScreen();
+
+        StartCoroutine(ResetWorld());
+    }
+
+    IEnumerator ResetWorld()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void WhenLoadEnded()
