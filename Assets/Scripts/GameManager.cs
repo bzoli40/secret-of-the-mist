@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
                 loaded = true;
                 gameState = GameState.PLAY;
                 GetComponent<Player>().WhenLoadEnded();
+                GetComponent<InputSystemValues>().SetCursorState(true);
             }
 
             StartCoroutine(LoadFinished());
