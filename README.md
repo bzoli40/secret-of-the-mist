@@ -1,3 +1,15 @@
 # KodersBase - Secret of the Mist
 
-[PE - MIK Project] [2022] An ongoing RPG-like storygame
+## A projektről
+
+fefnwfmwpfwpf,w
+
+fwmepfmwpfw,epf
+
+
+
+## DEMO
+
+fwefmwpfwm
+
+fwfpwpfwm
