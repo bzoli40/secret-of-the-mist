@@ -2,7 +2,7 @@
 
 
 
-## A projektről (tervek szerint)<img title="" src="file:///C:/Projects/secret-of-the-mist/Assets/Images/Identity/game_lgo.png" alt="" width="346" data-align="center">
+## A projektről (tervek szerint)<img title="" src="Assets/Images/Identity/game_lgo.png" alt="loading-ag-231" width="346" data-align="center">
 
 > - Egy **story** típusú játék, ahol karakterünknek fel kell fedeznie egy rejtélyes hegyvidéket
 > 
