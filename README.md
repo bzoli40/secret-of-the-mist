@@ -12,24 +12,7 @@
 
 - Komponensek:
 
-> - [x]  Kétféle irányítás 
-> 
-> - [ ]  Harcrendszer
-> 
-> - [x] AI
-> 
-> - [x] Interakciók
-> 
-> - [x] Inventory
-> 
-> - [x] Küldetések
-> 
-> - [ ] Képességek
-> 
-> - [x] Stats (pl. életerő)
-> 
-> - [ ] és más
-
+- [ ] 
 
 
 ## Használt programok
@@ -53,9 +36,9 @@ B --> C(Interakció-rendszer)
 C --> D(Kamera-mozgás)
 D --> E[Inventory]
 E --> F[Küldetésrendszer]
+F --> G[Interakciók 2.0]
+C --> G
 ```
-
-
 
 ## DEMO
 
