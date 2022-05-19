@@ -27,13 +27,24 @@
 
 
 
-## Mérföldkövek
+## Fejlesztési mérföldkövek
 
 ```mermaid
-stateDiagram
-[*] --> Kezdés
-Kezdés --> (Input rendszer)
-(Input rendszer) --> [*]
+graph LR
+A[Kezdés] --> B(Input rendszer)
+B --> C(Interakció-rendszer)
+C --> D(Kamera-mozgás)
+D --> E[Inventory]
+E --> F[Küldetésrendszer]
+F --> G[Interakciók 2.0]
+C --> G
+G --> H(Notifications])
+G --> I[Eventek]
+I --> J(Trackerek)
+H --> J
+F --> J
+J --> K[AI]
+K --> L[Bemutató!]
 ```
 
 ## DEMO
