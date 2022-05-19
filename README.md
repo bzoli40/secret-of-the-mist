@@ -31,15 +31,9 @@
 
 ```mermaid
 stateDiagram
-[*] --> A[Kezdés]
-A --> B(Input rendszer)
-B --> C(Interakció-rendszer)
-C --> D(Kamera-mozgás)
-D --> E[Inventory]
-E --> F[Küldetésrendszer]
-F --> G[Interakciók 2.0]
-C --> G
-G --> [*]
+[*] --> Kezdés
+Kezdés --> Input rendszer
+Input rendszer --> [*]
 ```
 
 ## DEMO
