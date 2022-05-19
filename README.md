@@ -32,8 +32,8 @@
 ```mermaid
 stateDiagram
 [*] --> Kezdés
-Kezdés --> Input rendszer
-Input rendszer --> [*]
+Kezdés --> (Input rendszer)
+(Input rendszer) --> [*]
 ```
 
 ## DEMO
