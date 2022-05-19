@@ -38,7 +38,7 @@ D --> E[Inventory]
 E --> F[Küldetésrendszer]
 F --> G[Interakciók 2.0]
 C --> G
-G --> H(Notifications])
+G --> H(Notifications)
 G --> I[Eventek]
 I --> J(Trackerek)
 H --> J
