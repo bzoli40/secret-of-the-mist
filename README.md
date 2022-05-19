@@ -11,8 +11,25 @@
 - Egyszemélyes játékélmény PC-n akár billentyűvel, akár kontrollerrel
 
 - Komponensek:
+  
+  - Interakciók
+  
+  - Harcrendszer
+  
+  - AI
+  
+  - Irányítás
+  
+  - Inventory
+  
+  - Küldetések
+  
+  - Képességek
+  
+  - Stats (pl. életerő)
+  
+  - és más
 
-- [ ] 
 
 
 ## Használt programok
@@ -49,6 +66,17 @@ K --> L[Bemutató!]
 
 ## DEMO
 
-fwefmwpfwm
+A bemutatóra elkészült a tervekből(%):
 
-fwfpwpfwm
+```mermaid
+pie
+    title Haladás
+    "Igen" : 55
+    "Nem" : 45
+```
+
+Hogyan lehet kipróbálni a **DEMO**-t?
+
+\- A GitHub projekten belül a **Runnable **mappában található .exe fájl indításával
+
+! Fontos ! Újraindításhoz vagy meg kell halni az egyik ellenségtől (közel kell hozzá állni) vagy az alkalmazást kell újra megnyitni
