@@ -77,6 +77,6 @@ pie
 
 Hogyan lehet kipróbálni a **DEMO**-t?
 
-\- A GitHub projekten belül a **Runnable **mappában található .exe fájl indításával
+\- A GitHub projekten belül a **Runnable** mappában található .exe fájl indításával
 
 ! Fontos ! Újraindításhoz vagy meg kell halni az egyik ellenségtől (közel kell hozzá állni) vagy az alkalmazást kell újra megnyitni
